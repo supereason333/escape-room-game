@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://csgng5k6k6gh" path="res://player.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://s1sukw52d6mb" path="res://assets/models/door.fbx" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://bhx23jodvvj4n" path="res://table.tscn" id="8_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://bfmltyjg7ddyx" path="res://prefabs/exam.tscn" id="9_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://c0pbbhy487t7c" path="res://enviroment.tscn" id="9_ioo17"]
 [ext_resource type="PackedScene" uid="uid://b5o0jw487bv7u" path="res://chess_table.tscn" id="10_wse8f"]
 
@@ -81,9 +82,12 @@ transform = Transform3D(-0.86602545, 0, -0.4999999, 0, 1, 0, 0.4999999, 0, -0.86
 metadata/_edit_lock_ = true
 
 [node name="Table" parent="." unique_id=1729802368 instance=ExtResource("8_gbfbk")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.019830644, 0.82706, -2.9692404)
+transform = Transform3D(-0.662411, 0, -0.74914074, 0, 1, 0, 0.74914074, 0, -0.662411, 4.733386, 0.7991307, -1.7126101)
+
+[node name="Exam" parent="Table" unique_id=1558142632 instance=ExtResource("9_ic0uy")]
+transform = Transform3D(-0.2848855, 0, -0.9585619, 0, 1, 0, 0.9585619, 0, -0.2848855, 0.2982266, 0.04549682, 0.6978979)
 
 [node name="WorldEnvironment" parent="." unique_id=1598018179 instance=ExtResource("9_ioo17")]
 
 [node name="ChessTable" parent="." unique_id=2017433026 instance=ExtResource("10_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.749976, 0.41834044, -0.56662905)
+transform = Transform3D(0.6051273, 0, -0.79612875, 0, 1, 0, 0.79612875, 0, 0.6051273, -3.6885912, 0.41833997, -1.2026488)

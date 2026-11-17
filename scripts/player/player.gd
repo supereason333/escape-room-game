@@ -1,6 +1,10 @@
 extends RigidBody3D
 class_name Player
 
+signal override
+signal override_released
+
+@onready var override_ui_base:Control = %OverrideUI
 @onready var select_ray:RayCast3D = %SelectRay
 @onready var cam_rotate:Node3D = $Rotate
 @onready var cam_tilt:Node3D = $Rotate/Tilt
@@ -16,7 +20,14 @@ var camera_zoomed := false
 var pos_reset_queued := false
 var reset_pos:Vector2
 
-var camera_override := false
+var camera_override := false:
+	set(value):
+		if value != camera_override:
+			camera_override = value
+			if camera_override:
+				override.emit()
+			else:
+				override_released.emit()
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

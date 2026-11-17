@@ -41,5 +41,5 @@ func return_camera():
 	player = null
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("give_mouse"):
+	if event.is_action_pressed("exit_view"):
 		return_camera()

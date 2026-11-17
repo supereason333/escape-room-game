@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dkhsbypwy2kqk"]
 
 [ext_resource type="PackedScene" uid="uid://by63p0x31yo05" path="res://assets/models/bookshelf.fbx" id="1_ridy3"]
+[ext_resource type="Material" uid="uid://bm1h17sp684ip" path="res://resources/book_dar_materia.tres" id="2_rxuhs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p42su"]
 size = Vector3(0.60302734, 2.3867798, 3.2822266)
 
 [node name="bookshelf" unique_id=836207381 instance=ExtResource("1_ridy3")]
+
+[node name="Cube_101" parent="Bookshelf/Empty" parent_id_path=PackedInt32Array(1767753277) index="100" unique_id=1811397571]
+surface_material_override/0 = ExtResource("2_rxuhs")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1320793385]
 

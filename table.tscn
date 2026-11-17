@@ -3,19 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://2k50o8bq7klp" path="res://assets/models/screen.fbx" id="1_v5i0k"]
 [ext_resource type="PackedScene" uid="uid://bbf2hcyytgjvf" path="res://assets/models/table.fbx" id="2_kl0hw"]
 [ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="3_vjl2i"]
-[ext_resource type="Script" uid="uid://ciwr40tr0xj47" path="res://camera_override.gd" id="4_67vji"]
+[ext_resource type="Script" uid="uid://ciwr40tr0xj47" path="res://scripts/things/camera_override.gd" id="4_67vji"]
 [ext_resource type="Texture2D" uid="uid://ke70xxa0gyb7" path="res://assets/icon.svg" id="5_67vji"]
-[ext_resource type="Script" uid="uid://cytreykh1q41y" path="res://computer_ui.gd" id="5_bhh2s"]
+[ext_resource type="Script" uid="uid://cytreykh1q41y" path="res://scripts/things/computer/computer_ui.gd" id="5_bhh2s"]
 [ext_resource type="Shader" uid="uid://dfl6o5dti1f5g" path="res://resources/crt_shader.gdshader" id="6_jry6c"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_64sdq"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bhh2s"]
 viewport_path = NodePath("../ComputerUI/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ormek"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64sdq"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_64sdq")
+emission_texture = SubResource("ViewportTexture_bhh2s")
 disable_receive_shadows = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v5i0k"]
@@ -39,7 +39,7 @@ shader_parameter/vinnette_outer_radius = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26006183, 0.5316697, 0)
 
 [node name="Screen" parent="screen" index="0" unique_id=893620713]
-surface_material_override/0 = SubResource("StandardMaterial3D_ormek")
+surface_material_override/0 = SubResource("StandardMaterial3D_64sdq")
 
 [node name="table" parent="." unique_id=1017902695 instance=ExtResource("2_kl0hw")]
 

@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://b6iiuro6ydkia"]
 
 [ext_resource type="PackedScene" uid="uid://by63p0x31yo05" path="res://assets/models/bookshelf.fbx" id="1_p42su"]
+[ext_resource type="Material" uid="uid://bm1h17sp684ip" path="res://resources/book_dar_materia.tres" id="2_kccur"]
 
 [node name="bookshelf" unique_id=836207381 instance=ExtResource("1_p42su")]
+
+[node name="Cube_076" parent="Bookshelf/Empty" parent_id_path=PackedInt32Array(1767753277) index="75" unique_id=1537285258]
+surface_material_override/0 = ExtResource("2_kccur")

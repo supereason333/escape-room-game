@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0d086lhn1drq"]
 
-[ext_resource type="Script" uid="uid://bahno1iycqpen" path="res://select_3d.gd" id="1_so1oj"]
+[ext_resource type="Script" uid="uid://bahno1iycqpen" path="res://scripts/things/select_3d.gd" id="1_so1oj"]
 
 [node name="Select3D" type="Area3D" unique_id=1980313047]
 collision_layer = 2
