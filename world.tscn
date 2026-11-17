@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://s1sukw52d6mb" path="res://assets/models/door.fbx" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://bhx23jodvvj4n" path="res://table.tscn" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://c0pbbhy487t7c" path="res://enviroment.tscn" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://b5o0jw487bv7u" path="res://chess_table.tscn" id="10_wse8f"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pkg7o"]
 
@@ -83,3 +84,6 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.019830644, 0.82706, -2.9692404)
 
 [node name="WorldEnvironment" parent="." unique_id=1598018179 instance=ExtResource("9_ioo17")]
+
+[node name="ChessTable" parent="." unique_id=2017433026 instance=ExtResource("10_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.749976, 0.41834044, -0.56662905)

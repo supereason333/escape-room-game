@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://b5o0jw487bv7u"]
+
+[ext_resource type="PackedScene" uid="uid://cfsyol47xyqy4" path="res://assets/models/table_small.fbx" id="1_nb7vr"]
+[ext_resource type="PackedScene" uid="uid://brif5hjj6xemd" path="res://assets/models/chessboard.fbx" id="2_jhyi7"]
+[ext_resource type="Texture2D" uid="uid://d17lwmuxm4b8i" path="res://assets/textures/chess_board.png" id="3_jhyi7"]
+[ext_resource type="PackedScene" uid="uid://c3y1j6qrmmpp7" path="res://assets/models/chess_pieces/bishop/scene.gltf" id="4_uvepu"]
+[ext_resource type="PackedScene" uid="uid://b3goo4oixyt61" path="res://assets/models/chess_pieces/king/scene.gltf" id="5_3nov1"]
+[ext_resource type="PackedScene" uid="uid://cem5hblh3pjeq" path="res://assets/models/chess_pieces/knight/scene.gltf" id="6_b8iba"]
+[ext_resource type="PackedScene" uid="uid://bq8iv6p173nib" path="res://assets/models/chess_pieces/pawn/scene.gltf" id="7_d63h6"]
+[ext_resource type="PackedScene" uid="uid://b5lfa6o2upg2s" path="res://assets/models/chess_pieces/queen/scene.gltf" id="8_taqtt"]
+[ext_resource type="PackedScene" uid="uid://dgysocu12riec" path="res://assets/models/chess_pieces/rook/scene.gltf" id="9_723q2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfskq"]
+albedo_texture = ExtResource("3_jhyi7")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r3bhl"]
+material = SubResource("StandardMaterial3D_lfskq")
+size = Vector2(0.457, 0.457)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db3fa"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jhyi7"]
+size = Vector3(1.1291504, 0.77978516, 1.123291)
+
+[node name="ChessTable" type="Node3D" unique_id=2017433026]
+
+[node name="table_small" parent="." unique_id=763636801 instance=ExtResource("1_nb7vr")]
+
+[node name="chessboard" parent="." unique_id=317201459 instance=ExtResource("2_jhyi7")]
+transform = Transform3D(0.90034914, 0, 0.43516827, 0, 1, 0, -0.43516827, 0, 0.90034914, -0.029937238, 0.38309625, 0.008136541)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="chessboard" unique_id=393092317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010153949, 0)
+mesh = SubResource("PlaneMesh_r3bhl")
+
+[node name="PiecesWhite" type="Node3D" parent="chessboard" unique_id=623267563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012544781, 0)
+
+[node name="Bishop" parent="chessboard/PiecesWhite" unique_id=1921185254 instance=ExtResource("4_uvepu")]
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, -0.06953218, 0, -0.071006574)
+
+[node name="Queen" parent="chessboard/PiecesWhite" unique_id=1590954688 instance=ExtResource("5_3nov1")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.033221573, 0, -0.03540828)
+
+[node name="Knight" parent="chessboard/PiecesWhite" unique_id=2081321054 instance=ExtResource("6_b8iba")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.03306502, 0, 0.02819885)
+
+[node name="Pawn" parent="chessboard/PiecesWhite" unique_id=898284753 instance=ExtResource("7_d63h6")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.0720467, 0, 0.07567065)
+
+[node name="King" parent="chessboard/PiecesWhite" unique_id=620366764 instance=ExtResource("8_taqtt")]
+transform = Transform3D(0.012, 0, 0, 0, 0.012, 0, 0, 0, 0.012, 0.10161817, 0, 0.11123737)
+
+[node name="Rook" parent="chessboard/PiecesWhite" unique_id=2032446606 instance=ExtResource("9_723q2")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.1299542, 0, 0.14583682)
+
+[node name="PiecesBlack" type="Node3D" parent="chessboard" unique_id=1081156011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012544781, 0)
+
+[node name="Bishop" parent="chessboard/PiecesBlack" unique_id=1359642906 instance=ExtResource("4_uvepu")]
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, -0.17069285, 0, -0.0365671)
+
+[node name="LP Bishop_0" parent="chessboard/PiecesBlack/Bishop/Sketchfab_model/Root/LP Bishop" parent_id_path=PackedInt32Array(1359642906, 1694974856) index="0" unique_id=1593017181]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Queen" parent="chessboard/PiecesBlack" unique_id=219351011 instance=ExtResource("5_3nov1")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.13438223, 0, -0.00096880924)
+
+[node name="Sphere_0" parent="chessboard/PiecesBlack/Queen/Sketchfab_model/Root/Sphere" parent_id_path=PackedInt32Array(219351011, 1062836995) index="0" unique_id=259466908]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Knight" parent="chessboard/PiecesBlack" unique_id=2052263216 instance=ExtResource("6_b8iba")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -0.068095654, 0, 0.06263832)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Knight/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(2052263216, 456230522) index="0" unique_id=1196582094]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Pawn" parent="chessboard/PiecesBlack" unique_id=1941001128 instance=ExtResource("7_d63h6")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -0.029113976, 0, 0.11011013)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(1941001128, 561174157) index="0" unique_id=473895112]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="King" parent="chessboard/PiecesBlack" unique_id=2052491879 instance=ExtResource("8_taqtt")]
+transform = Transform3D(0.011999999, 0, 0, 0, 0.012, 0, 0, 0, 0.011999999, 0.00045749918, 0, 0.14567684)
+
+[node name="LP Queen_0" parent="chessboard/PiecesBlack/King/Sketchfab_model/Root/LP Queen" parent_id_path=PackedInt32Array(2052491879, 21152281) index="0" unique_id=1993982093]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Rook" parent="chessboard/PiecesBlack" unique_id=1141398365 instance=ExtResource("9_723q2")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.02879353, 0, 0.18027629)
+
+[node name="Rook_0" parent="chessboard/PiecesBlack/Rook/Sketchfab_model/Root/Rook" parent_id_path=PackedInt32Array(1141398365, 1207418642) index="0" unique_id=1145067785]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=60615207]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1083952889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03491211, 0)
+shape = SubResource("BoxShape3D_jhyi7")
+
+[editable path="chessboard/PiecesBlack/Bishop"]
+[editable path="chessboard/PiecesBlack/Queen"]
+[editable path="chessboard/PiecesBlack/Knight"]
+[editable path="chessboard/PiecesBlack/Pawn"]
+[editable path="chessboard/PiecesBlack/King"]
+[editable path="chessboard/PiecesBlack/Rook"]
