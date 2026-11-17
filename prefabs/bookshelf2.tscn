@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b6iiuro6ydkia"]
+
+[ext_resource type="PackedScene" uid="uid://by63p0x31yo05" path="res://assets/models/bookshelf.fbx" id="1_p42su"]
+
+[node name="bookshelf" unique_id=836207381 instance=ExtResource("1_p42su")]

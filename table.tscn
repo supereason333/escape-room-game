@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bhx23jodvvj4n"]
+
+[ext_resource type="PackedScene" uid="uid://2k50o8bq7klp" path="res://assets/models/screen.fbx" id="1_v5i0k"]
+[ext_resource type="PackedScene" uid="uid://bbf2hcyytgjvf" path="res://assets/models/table.fbx" id="2_kl0hw"]
+[ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="3_vjl2i"]
+[ext_resource type="Script" uid="uid://ciwr40tr0xj47" path="res://camera_override.gd" id="4_67vji"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5i0k"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5i0k"]
+size = Vector3(1.6950684, 1.8496094, 3.5158691)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jry6c"]
+size = Vector3(0.2841797, 0.72753906, 0.6875)
+
+[node name="Table" type="Node3D" unique_id=1729802368]
+
+[node name="screen" parent="." unique_id=2076542261 instance=ExtResource("1_v5i0k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26006183, 0.5316697, 0)
+
+[node name="Screen" parent="screen" index="0" unique_id=1686934874]
+surface_material_override/0 = SubResource("StandardMaterial3D_v5i0k")
+
+[node name="table" parent="." unique_id=1017902695 instance=ExtResource("2_kl0hw")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=381240303]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=833128525]
+shape = SubResource("BoxShape3D_v5i0k")
+
+[node name="Select3D" parent="." unique_id=1980313047 instance=ExtResource("3_vjl2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40921208, 0.4289349, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Select3D" unique_id=635709245]
+shape = SubResource("BoxShape3D_jry6c")
+
+[node name="CameraOverride" type="Node3D" parent="." unique_id=455092990 node_paths=PackedStringArray("camera")]
+script = ExtResource("4_67vji")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="CameraOverride" unique_id=287008140]
+transform = Transform3D(-4.3376488e-08, -0.12354951, 0.9923384, -5.400521e-09, 0.9923384, 0.12354951, -1, -4.440892e-16, -4.371139e-08, 0.5893133, 0.6192412, 0)
+
+[connection signal="triggered" from="Select3D" to="CameraOverride" method="override"]
+
+[editable path="screen"]

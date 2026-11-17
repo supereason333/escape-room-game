@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://csgng5k6k6gh"]
+
+[ext_resource type="Script" uid="uid://buaargxvteaxn" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4flbx"]
+friction = 0.5
+rough = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
+radius = 0.24
+height = 1.7
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sh265"]
+points = PackedVector3Array(0.20978703, 0.6328436, 0.11234434, -0.23004152, -0.6372436, -0.05842237, -0.20634967, -0.6643202, -0.10788055, -0.15851097, 0.6950987, -0.15851097, 0.15911043, -0.6252014, -0.17750736, -0.05762012, -0.60465425, 0.23270677, -0.17750736, 0.6252014, 0.15911043, 0.06425495, 0.6143148, -0.23066479, 0.19003522, -0.6986925, 0.11510828, -0.058422342, -0.63724333, -0.2300414, 0.08955765, 0.66923946, 0.21361315, 0.21465679, 0.6725535, -0.084319025, -0.03589639, -0.82712007, 0.09325002, -0.20757063, -0.64354104, 0.11419508, -0.23320404, 0.64589673, 0.04005943, 0.06759185, 0.82918864, 0.06759185, 0.23270677, -0.60465425, -0.05762012, 0.11234434, -0.6328436, 0.20978703, 0.06706747, -0.8224718, -0.08707555, -0.05762012, 0.60465425, 0.23270677, -0.061517343, 0.82396126, -0.08723841, -0.1295827, 0.6018407, -0.20182669, -0.22552174, 0.60078526, -0.081242435, -0.11206465, 0.7660586, 0.14329073, 0.06425496, -0.6143149, -0.23066482, -0.1383636, -0.7958261, -0.061329756, 0.18296224, 0.62430215, -0.15321606, 0.0668777, 0.79435456, -0.13810247, 0.23138233, 0.60117006, 0.06294119, 0.20978715, -0.632844, 0.1123444, -0.15321606, -0.62430215, 0.18296224, -0.15546535, -0.63329947, -0.17984357)
+
+[node name="Player" type="RigidBody3D" unique_id=1240751223]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_4flbx")
+script = ExtResource("1_4flbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=505624290]
+mesh = SubResource("CapsuleMesh_sh265")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=190425217]
+shape = SubResource("ConvexPolygonShape3D_sh265")
+
+[node name="Rotate" type="Node3D" parent="." unique_id=114080520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61955416, 0)
+
+[node name="Tilt" type="Node3D" parent="Rotate" unique_id=487888438]
+
+[node name="Camera" type="Camera3D" parent="Rotate/Tilt" unique_id=304607599]
+unique_name_in_owner = true
+
+[node name="SelectRay" type="RayCast3D" parent="Rotate/Tilt" unique_id=1251221220]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -1)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
