@@ -32,7 +32,7 @@ func _physics_process(_dt: float) -> void:
 
 	target_velocity *= cam_rotate.transform.basis.inverse()
 
-	if camera_override: target_velocity = Vector3.ZERO
+	if camera_override or Input.mouse_mode != Input.MOUSE_MODE_CAPTURED: target_velocity = Vector3.ZERO
 
 	var velocity_error := target_velocity - linear_velocity
 
@@ -54,15 +54,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		cam_tilt.rotation.x -= event.screen_relative.y * sens
 		cam_tilt.rotation.x = clamp(cam_tilt.rotation.x, -PI/2, PI/2)
 
-	if Input.is_action_pressed("zoom") and !camera_zoomed:
+	if event.is_action_pressed("zoom") and !camera_zoomed:
 		camera_zoomed = true
 		create_tween().tween_property(camera, "fov", 30, 0.1)
-	elif Input.is_action_just_released("zoom"):
+	elif event.is_action_released("zoom") and camera_zoomed:
 		camera_zoomed = false
 		create_tween().tween_property(camera, "fov", 75, 0.1)
 
-	if Input.is_action_just_pressed("select"):
-		select_ray.force_raycast_update()
-		var collider = select_ray.get_collider()
-		if collider is Select3D:
-			collider.trigger(self)
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			select_ray.force_raycast_update()
+			var collider = select_ray.get_collider()
+			if collider is Select3D:
+				collider.trigger(self)
