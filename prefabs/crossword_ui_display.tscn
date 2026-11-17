@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cwq5ey2gsednw"]
+
+[ext_resource type="Texture2D" uid="uid://5eo0w26fq2ev" path="res://assets/textures/crossword_base.png" id="1_67qu8"]
+[ext_resource type="Texture2D" uid="uid://cv53r1pmu4575" path="res://assets/textures/crossword.png" id="2_ws0x3"]
+[ext_resource type="Script" uid="uid://50eyunbvbk1k" path="res://scripts/crossword_spin.gd" id="3_ws0x3"]
+[ext_resource type="Script" uid="uid://i4j80dic7m0c" path="res://ui_draggable.gd" id="4_4awv5"]
+
+[sub_resource type="Gradient" id="Gradient_4awv5"]
+offsets = PackedFloat32Array(0.5993976, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8em64"]
+gradient = SubResource("Gradient_4awv5")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_ws0x3"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.7289157)
+colors = PackedColorArray(1, 1, 1, 0, 0.1638613, 0.16386127, 0.16386127, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4awv5"]
+gradient = SubResource("Gradient_ws0x3")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[node name="CrosswordUiDisplay" type="Control" unique_id=1550941537]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=68543105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Base" type="TextureRect" parent="CenterContainer" unique_id=173880752]
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 2
+texture = ExtResource("1_67qu8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spin" type="Control" parent="CenterContainer/Base" unique_id=1413904294]
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 291.0
+offset_right = 576.0
+offset_bottom = 291.0
+
+[node name="Shadow" type="TextureRect" parent="CenterContainer/Base/Spin" unique_id=820572777]
+custom_minimum_size = Vector2(440, 440)
+layout_mode = 0
+offset_left = -207.0
+offset_top = -206.0
+offset_right = 233.0
+offset_bottom = 234.0
+texture = SubResource("GradientTexture2D_8em64")
+expand_mode = 1
+
+[node name="Crossword" type="TextureRect" parent="CenterContainer/Base/Spin" unique_id=931425088]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 0
+offset_left = -187.0
+offset_top = -186.0
+offset_right = 213.0
+offset_bottom = 214.0
+texture = ExtResource("2_ws0x3")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_ws0x3")
+
+[node name="DragMarker" type="TextureRect" parent="." unique_id=1252224032]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 198.0
+offset_right = 285.0
+offset_bottom = 262.0
+texture = SubResource("GradientTexture2D_4awv5")
+script = ExtResource("4_4awv5")
+
+[node name="DragMarker2" type="TextureRect" parent="." unique_id=506401910]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 240.0
+offset_right = 456.0
+offset_bottom = 304.0
+texture = SubResource("GradientTexture2D_4awv5")
+script = ExtResource("4_4awv5")

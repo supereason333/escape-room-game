@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cjo0l4npolsxb"]
+
+[ext_resource type="Texture2D" uid="uid://br7dbm46dv3fm" path="res://assets/textures/crossword_texture.png" id="1_qqpr7"]
+[ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="2_77fip"]
+[ext_resource type="Script" uid="uid://inccqs4cu3k5" path="res://scripts/things/ui_override.gd" id="3_oyhmy"]
+[ext_resource type="PackedScene" uid="uid://cwq5ey2gsednw" path="res://prefabs/crossword_ui_display.tscn" id="4_qqpr7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_18mnq"]
+size = Vector3(0.21, 0.001, 0.297)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbdrv"]
+albedo_texture = ExtResource("1_qqpr7")
+uv1_scale = Vector3(3.009, 2, 2.99)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cqxaj"]
+size = Vector3(0.20507813, 0.0087890625, 0.29516602)
+
+[node name="Crossword" type="MeshInstance3D" unique_id=1558142632]
+mesh = SubResource("BoxMesh_18mnq")
+surface_material_override/0 = SubResource("StandardMaterial3D_bbdrv")
+
+[node name="Select3D" parent="." unique_id=1980313047 instance=ExtResource("2_77fip")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Select3D" unique_id=864849537]
+shape = SubResource("BoxShape3D_cqxaj")
+
+[node name="UiOverride" type="Node" parent="." unique_id=1365914052]
+script = ExtResource("3_oyhmy")
+ui_scene = ExtResource("4_qqpr7")
+
+[connection signal="triggered" from="Select3D" to="UiOverride" method="override"]

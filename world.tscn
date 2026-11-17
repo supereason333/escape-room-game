@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bhx23jodvvj4n" path="res://table.tscn" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://bfmltyjg7ddyx" path="res://prefabs/exam.tscn" id="9_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://c0pbbhy487t7c" path="res://enviroment.tscn" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://cjo0l4npolsxb" path="res://prefabs/crossword.tscn" id="10_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://b5o0jw487bv7u" path="res://chess_table.tscn" id="10_wse8f"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pkg7o"]
@@ -86,6 +87,9 @@ transform = Transform3D(-0.662411, 0, -0.74914074, 0, 1, 0, 0.74914074, 0, -0.66
 
 [node name="Exam" parent="Table" unique_id=1558142632 instance=ExtResource("9_ic0uy")]
 transform = Transform3D(-0.2848855, 0, -0.9585619, 0, 1, 0, 0.9585619, 0, -0.2848855, 0.2982266, 0.04549682, 0.6978979)
+
+[node name="Crossword" parent="Table" unique_id=890191936 instance=ExtResource("10_k3n1d")]
+transform = Transform3D(0.5741055, 0, -0.8187817, 0, 1, 0, 0.8187817, 0, 0.5741055, 0.45815945, 0.03993708, 0.9695699)
 
 [node name="WorldEnvironment" parent="." unique_id=1598018179 instance=ExtResource("9_ioo17")]
 
