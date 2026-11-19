@@ -12,10 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://c0pbbhy487t7c" path="res://enviroment.tscn" id="9_ioo17"]
 [ext_resource type="PackedScene" uid="uid://cjo0l4npolsxb" path="res://prefabs/crossword.tscn" id="10_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://b5o0jw487bv7u" path="res://chess_table.tscn" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://c246w3gg5m666" path="res://prefabs/filing_cabinet.tscn" id="13_2o6r5"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pkg7o"]
 
 [node name="World" type="Node3D" unique_id=1094791036]
+metadata/_edit_lock_ = true
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=73187622]
 visible = false
@@ -95,3 +97,6 @@ transform = Transform3D(0.5741055, 0, -0.8187817, 0, 1, 0, 0.8187817, 0, 0.57410
 
 [node name="ChessTable" parent="." unique_id=2017433026 instance=ExtResource("10_wse8f")]
 transform = Transform3D(0.6051273, 0, -0.79612875, 0, 1, 0, 0.79612875, 0, 0.6051273, -3.6885912, 0.41833997, -1.2026488)
+
+[node name="FilingCabinet" parent="." unique_id=564058686 instance=ExtResource("13_2o6r5")]
+transform = Transform3D(0.43976688, 0, -0.89811194, 0, 1, 0, 0.89811194, 0, 0.43976688, -5.0299044, 0.6603997, -7.3053436)

@@ -29,7 +29,7 @@ size = Vector3(1.1291504, 0.77978516, 1.123291)
 [node name="table_small" parent="." unique_id=763636801 instance=ExtResource("1_nb7vr")]
 
 [node name="chessboard" parent="." unique_id=317201459 instance=ExtResource("2_jhyi7")]
-transform = Transform3D(0.90034914, 0, 0.43516827, 0, 1, 0, -0.43516827, 0, 0.90034914, -0.029937238, 0.38309625, 0.008136541)
+transform = Transform3D(0.9316595, 0, 0.3633325, 0, 1, 0, -0.3633325, 0, 0.9316595, -0.050870135, 0.38309625, 0.08649297)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="chessboard" unique_id=393092317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010153949, 0)
@@ -39,60 +39,155 @@ mesh = SubResource("PlaneMesh_r3bhl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012544781, 0)
 
 [node name="Bishop" parent="chessboard/PiecesWhite" unique_id=1921185254 instance=ExtResource("4_uvepu")]
-transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, -0.06953218, 0, -0.071006574)
+transform = Transform3D(0.005435196, 0, 0.0095634, 0, 0.011, 0, -0.0095634, 0, 0.005435196, 0.14405039, 0, 0.08553581)
+
+[node name="Bishop2" parent="chessboard/PiecesWhite" unique_id=209229067 instance=ExtResource("4_uvepu")]
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 0.08471209, 0, -0.08662456)
 
 [node name="Queen" parent="chessboard/PiecesWhite" unique_id=1590954688 instance=ExtResource("5_3nov1")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.033221573, 0, -0.03540828)
+transform = Transform3D(0.007705021, 0, 0.0063743745, 0, 0.01, 0, -0.0063743745, 0, 0.007705021, 0.026871294, 0, 0.19738042)
 
 [node name="Knight" parent="chessboard/PiecesWhite" unique_id=2081321054 instance=ExtResource("6_b8iba")]
-transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.03306502, 0, 0.02819885)
+transform = Transform3D(0.0076458273, 0, -0.01405494, 0, 0.016, 0, 0.01405494, 0, 0.0076458273, -0.14369503, 0, 0.19442935)
+
+[node name="Knight2" parent="chessboard/PiecesWhite" unique_id=1528337454 instance=ExtResource("6_b8iba")]
+transform = Transform3D(-0.0031959068, 0, -0.01567757, 0, 0.016, 0, 0.01567757, 0, -0.0031959068, 0.08526931, 0, 0.08305688)
 
 [node name="Pawn" parent="chessboard/PiecesWhite" unique_id=898284753 instance=ExtResource("7_d63h6")]
-transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.0720467, 0, 0.07567065)
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -0.20651224, 0, 0.13638783)
+
+[node name="Pawn2" parent="chessboard/PiecesWhite" unique_id=1102473136 instance=ExtResource("7_d63h6")]
+transform = Transform3D(0.0015096256, 0, -0.015928624, 0, 0.016, 0, 0.015928624, 0, 0.0015096256, -0.14623435, 0, 0.02542302)
+
+[node name="Pawn3" parent="chessboard/PiecesWhite" unique_id=1599822017 instance=ExtResource("7_d63h6")]
+transform = Transform3D(-0.015607263, 0, -0.003523261, 0, 0.016, 0, 0.003523261, 0, -0.015607263, -0.087654874, 0, 0.08230588)
+
+[node name="Pawn4" parent="chessboard/PiecesWhite" unique_id=1659609521 instance=ExtResource("7_d63h6")]
+transform = Transform3D(0.001091031, 0, -0.015962759, 0, 0.016, 0, 0.015962759, 0, 0.001091031, -0.028519202, 0, 0.13638783)
+
+[node name="Pawn5" parent="chessboard/PiecesWhite" unique_id=1866775690 instance=ExtResource("7_d63h6")]
+transform = Transform3D(-0.010400509, 0, -0.012158513, 0, 0.016, 0, 0.012158513, 0, -0.010400509, 0.03311478, 0, 0.13638783)
+
+[node name="Pawn6" parent="chessboard/PiecesWhite" unique_id=105422961 instance=ExtResource("7_d63h6")]
+transform = Transform3D(0.012695183, 0, 0.009738189, 0, 0.016, 0, -0.009738189, 0, 0.012695183, 0.0882048, 0, 0.13638783)
+
+[node name="Pawn7" parent="chessboard/PiecesWhite" unique_id=1506877305 instance=ExtResource("7_d63h6")]
+transform = Transform3D(0.013406244, 0, -0.008733421, 0, 0.016, 0, 0.008733421, 0, 0.013406244, 0.14322305, 0, 0.13638783)
+
+[node name="Pawn8" parent="chessboard/PiecesWhite" unique_id=793336544 instance=ExtResource("7_d63h6")]
+transform = Transform3D(0.01132772, 0, 0.011299681, 0, 0.016, 0, -0.011299681, 0, 0.01132772, 0.1982215, 0, 0.13638783)
 
 [node name="King" parent="chessboard/PiecesWhite" unique_id=620366764 instance=ExtResource("8_taqtt")]
-transform = Transform3D(0.012, 0, 0, 0, 0.012, 0, 0, 0, 0.012, 0.10161817, 0, 0.11123737)
+transform = Transform3D(-0.0067488113, 0, -0.009922376, 0, 0.012, 0, 0.009922376, 0, -0.0067488113, -0.028856039, 0, 0.19709554)
 
 [node name="Rook" parent="chessboard/PiecesWhite" unique_id=2032446606 instance=ExtResource("9_723q2")]
-transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.1299542, 0, 0.14583682)
+transform = Transform3D(0.010958046, 0, 0.011658527, 0, 0.016, 0, -0.011658527, 0, 0.010958046, -0.19754352, 0, 0.19631004)
+
+[node name="Rook2" parent="chessboard/PiecesWhite" unique_id=1163638632 instance=ExtResource("9_723q2")]
+transform = Transform3D(-0.002821537, 0, 0.015749251, 0, 0.016, 0, -0.015749251, 0, -0.002821537, 0.1986971, 0, 0.20099398)
 
 [node name="PiecesBlack" type="Node3D" parent="chessboard" unique_id=1081156011]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012544781, 0)
 
 [node name="Bishop" parent="chessboard/PiecesBlack" unique_id=1359642906 instance=ExtResource("4_uvepu")]
-transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, -0.17069285, 0, -0.0365671)
+transform = Transform3D(-0.0054148203, 0, -0.009574953, 0, 0.011, 0, 0.009574953, 0, -0.0054148203, -0.08622669, 0, -0.2006637)
 
 [node name="LP Bishop_0" parent="chessboard/PiecesBlack/Bishop/Sketchfab_model/Root/LP Bishop" parent_id_path=PackedInt32Array(1359642906, 1694974856) index="0" unique_id=1593017181]
 surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
 
+[node name="Bishop2" parent="chessboard/PiecesBlack" unique_id=1716558479 instance=ExtResource("4_uvepu")]
+transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 0.088462904, 0, -0.2006637)
+
+[node name="LP Bishop_0" parent="chessboard/PiecesBlack/Bishop2/Sketchfab_model/Root/LP Bishop" parent_id_path=PackedInt32Array(1716558479, 1694974856) index="0" unique_id=1593017181]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
 [node name="Queen" parent="chessboard/PiecesBlack" unique_id=219351011 instance=ExtResource("5_3nov1")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.13438223, 0, -0.00096880924)
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.029476449, 0, -0.19984914)
 
 [node name="Sphere_0" parent="chessboard/PiecesBlack/Queen/Sketchfab_model/Root/Sphere" parent_id_path=PackedInt32Array(219351011, 1062836995) index="0" unique_id=259466908]
 surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
 
 [node name="Knight" parent="chessboard/PiecesBlack" unique_id=2052263216 instance=ExtResource("6_b8iba")]
-transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -0.068095654, 0, 0.06263832)
+transform = Transform3D(-0.0073857494, 0, -0.014193335, 0, 0.016, 0, 0.014193335, 0, -0.0073857494, -0.14744225, 0, -0.20638049)
 
 [node name="Pawn_0" parent="chessboard/PiecesBlack/Knight/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(2052263216, 456230522) index="0" unique_id=1196582094]
 surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
 
+[node name="Knight2" parent="chessboard/PiecesBlack" unique_id=1953858059 instance=ExtResource("6_b8iba")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.14418593, 0, -0.20232937)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Knight2/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(1953858059, 456230522) index="0" unique_id=1196582094]
+transform = Transform3D(1, 0, 0, 0, 1, -2.938736e-39, 0, 0, 1, 12.576415, 6.5814705, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
 [node name="Pawn" parent="chessboard/PiecesBlack" unique_id=1941001128 instance=ExtResource("7_d63h6")]
-transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -0.029113976, 0, 0.11011013)
+transform = Transform3D(-0.01589483, 0, -0.0018315045, 0, 0.016, 0, 0.0018315045, 0, -0.01589483, -0.20186284, 0, -0.1461067)
 
 [node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(1941001128, 561174157) index="0" unique_id=473895112]
+transform = Transform3D(0.99999994, 1.4901161e-08, -3.3087225e-24, -1.4901161e-08, 0.99999994, 0, 3.3087225e-24, 0, 0.99999994, 0.5502415, 4.775303, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Pawn2" parent="chessboard/PiecesBlack" unique_id=221795455 instance=ExtResource("7_d63h6")]
+transform = Transform3D(-0.011880598, 0, -0.010716876, 0, 0.016, 0, 0.010716876, 0, -0.011880598, -0.14174628, 0, -0.14523216)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn2/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(221795455, 561174157) index="0" unique_id=473895112]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Pawn3" parent="chessboard/PiecesBlack" unique_id=257668457 instance=ExtResource("7_d63h6")]
+transform = Transform3D(-0.00016336037, 0, 0.015999168, 0, 0.016, 0, -0.015999168, 0, -0.00016336037, -0.0841076, 0, -0.14523216)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn3/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(257668457, 561174157) index="0" unique_id=473895112]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Pawn4" parent="chessboard/PiecesBlack" unique_id=681312733 instance=ExtResource("7_d63h6")]
+transform = Transform3D(-0.006692214, 0, -0.014533213, 0, 0.016, 0, 0.014533213, 0, -0.006692214, -0.027546339, 0, -0.14523216)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn4/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(681312733, 561174157) index="0" unique_id=473895112]
+transform = Transform3D(0.99999994, 2.9802322e-08, -6.617445e-24, -2.9802322e-08, 0.99999994, 3.3087225e-24, 6.617445e-24, 3.3087225e-24, 0.99999994, 7.7792253, 3.5821562, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Pawn5" parent="chessboard/PiecesBlack" unique_id=1225219320 instance=ExtResource("7_d63h6")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.030171357, 0, -0.14523216)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn5/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(1225219320, 561174157) index="0" unique_id=473895112]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Pawn6" parent="chessboard/PiecesBlack" unique_id=1347372014 instance=ExtResource("7_d63h6")]
+transform = Transform3D(-0.009759668, 0, -0.012678679, 0, 0.016, 0, 0.012678679, 0, -0.009759668, 0.08513064, 0, -0.14523216)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn6/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(1347372014, 561174157) index="0" unique_id=473895112]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Pawn7" parent="chessboard/PiecesBlack" unique_id=2054705783 instance=ExtResource("7_d63h6")]
+transform = Transform3D(-0.0034382204, 0, 0.015626218, 0, 0.016, 0, -0.015626218, 0, -0.0034382204, 0.14408575, 0, -0.14523216)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn7/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(2054705783, 561174157) index="0" unique_id=473895112]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Pawn8" parent="chessboard/PiecesBlack" unique_id=1866006018 instance=ExtResource("7_d63h6")]
+transform = Transform3D(0.012346527, 0, 0.010176606, 0, 0.016, 0, -0.010176606, 0, 0.012346527, 0.19855784, 0, -0.14523216)
+
+[node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn8/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(1866006018, 561174157) index="0" unique_id=473895112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.001356, -7.2810025, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
 
 [node name="King" parent="chessboard/PiecesBlack" unique_id=2052491879 instance=ExtResource("8_taqtt")]
-transform = Transform3D(0.011999999, 0, 0, 0, 0.012, 0, 0, 0, 0.011999999, 0.00045749918, 0, 0.14567684)
+transform = Transform3D(0.011999999, 0, 0, 0, 0.012, 0, 0, 0, 0.011999999, -0.026090309, 0, -0.20295297)
 
 [node name="LP Queen_0" parent="chessboard/PiecesBlack/King/Sketchfab_model/Root/LP Queen" parent_id_path=PackedInt32Array(2052491879, 21152281) index="0" unique_id=1993982093]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -9.705212, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
 
 [node name="Rook" parent="chessboard/PiecesBlack" unique_id=1141398365 instance=ExtResource("9_723q2")]
-transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.02879353, 0, 0.18027629)
+transform = Transform3D(0.006947603, 0, 0.01441287, 0, 0.016, 0, -0.01441287, 0, 0.006947603, -0.2017217, 0, -0.20109482)
 
 [node name="Rook_0" parent="chessboard/PiecesBlack/Rook/Sketchfab_model/Root/Rook" parent_id_path=PackedInt32Array(1141398365, 1207418642) index="0" unique_id=1145067785]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
+
+[node name="Rook2" parent="chessboard/PiecesBlack" unique_id=1901100558 instance=ExtResource("9_723q2")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.2012113, 0, -0.20109482)
+
+[node name="Rook_0" parent="chessboard/PiecesBlack/Rook2/Sketchfab_model/Root/Rook" parent_id_path=PackedInt32Array(1901100558, 1207418642) index="0" unique_id=1145067785]
 surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=60615207]
@@ -102,8 +197,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03491211, 0)
 shape = SubResource("BoxShape3D_jhyi7")
 
 [editable path="chessboard/PiecesBlack/Bishop"]
+[editable path="chessboard/PiecesBlack/Bishop2"]
 [editable path="chessboard/PiecesBlack/Queen"]
 [editable path="chessboard/PiecesBlack/Knight"]
+[editable path="chessboard/PiecesBlack/Knight2"]
 [editable path="chessboard/PiecesBlack/Pawn"]
+[editable path="chessboard/PiecesBlack/Pawn2"]
+[editable path="chessboard/PiecesBlack/Pawn3"]
+[editable path="chessboard/PiecesBlack/Pawn4"]
+[editable path="chessboard/PiecesBlack/Pawn5"]
+[editable path="chessboard/PiecesBlack/Pawn6"]
+[editable path="chessboard/PiecesBlack/Pawn7"]
+[editable path="chessboard/PiecesBlack/Pawn8"]
 [editable path="chessboard/PiecesBlack/King"]
 [editable path="chessboard/PiecesBlack/Rook"]
+[editable path="chessboard/PiecesBlack/Rook2"]

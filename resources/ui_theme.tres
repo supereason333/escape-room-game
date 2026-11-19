@@ -1,0 +1,41 @@
+[gd_resource type="Theme" format=3 uid="uid://nvypsl65gp2n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgeqy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cviax"]
+bg_color = Color(0.49354547, 0.49354553, 0.49354535, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yl303"]
+bg_color = Color(0.23753902, 0.23753917, 0.23753908, 1)
+border_color = Color(0.07484526, 0.07484528, 0.0748452, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qosx5"]
+bg_color = Color(0.17641911, 0.17641908, 0.17641908, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufndy"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7jai"]
+bg_color = Color(0.4217312, 0.4217313, 0.4217311, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21050718, 0.21050727, 0.21050707, 1)
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxFlat_fgeqy")
+Button/styles/hover = SubResource("StyleBoxFlat_cviax")
+Button/styles/normal = SubResource("StyleBoxFlat_yl303")
+Button/styles/pressed = SubResource("StyleBoxFlat_qosx5")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_ufndy")
+MarginContainer/constants/margin_bottom = 15
+MarginContainer/constants/margin_left = 15
+MarginContainer/constants/margin_right = 15
+MarginContainer/constants/margin_top = 15
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_m7jai")

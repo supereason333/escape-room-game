@@ -1,5 +1,7 @@
 extends Node
 
+signal override_with(scene:Control)
+
 @export var ui_scene:PackedScene
 
 var player:Player
@@ -13,9 +15,12 @@ func override(pl:Player):
 
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-	player.override_ui_base.add_child(ui_scene.instantiate())
+	var node = ui_scene.instantiate()
+	player.override_ui_base.add_child(node)
 
 	set_process_unhandled_input(true)
+
+	override_with.emit(node)
 
 func release():
 	set_process_unhandled_input(false)

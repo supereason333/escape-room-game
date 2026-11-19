@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://c246w3gg5m666"]
+
+[ext_resource type="PackedScene" uid="uid://bopl1bre8ucsi" path="res://assets/models/filing_cabinet.fbx" id="1_4ttnf"]
+[ext_resource type="PackedScene" uid="uid://cepepl4o8hwck" path="res://assets/models/filing_cabinet_draw.fbx" id="2_odq2c"]
+[ext_resource type="Script" uid="uid://b236amb1u3y5m" path="res://scripts/things/filing_cabinet/draw.gd" id="3_0524c"]
+[ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="4_0524c"]
+[ext_resource type="PackedScene" uid="uid://dak45hexy8klk" path="res://prefabs/keypad.tscn" id="5_b3shm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0524c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3shm"]
+size = Vector3(0.081970215, 0.28271484, 0.40722656)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3shm"]
+albedo_color = Color(0.556953, 0.556953, 0.556953, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0524c"]
+size = Vector3(0.60150146, 0.29821777, 0.390625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wcpa"]
+size = Vector3(0.60253906, 1.1806641, 0.3935547)
+
+[node name="FilingCabinet" unique_id=564058686 instance=ExtResource("1_4ttnf")]
+
+[node name="filing_cabinet_draw" parent="." index="1" unique_id=37901627 instance=ExtResource("2_odq2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21962982, -0.3760426, 0)
+script = ExtResource("3_0524c")
+
+[node name="Draw" parent="filing_cabinet_draw" index="0" unique_id=500539435]
+surface_material_override/0 = SubResource("StandardMaterial3D_0524c")
+
+[node name="Select3D" parent="filing_cabinet_draw" index="1" unique_id=1980313047 instance=ExtResource("4_0524c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="filing_cabinet_draw/Select3D" index="0" unique_id=162890887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08383179, -0.03930664, 0)
+shape = SubResource("BoxShape3D_b3shm")
+
+[node name="Draw_001" parent="filing_cabinet_draw" index="2" unique_id=723271197]
+surface_material_override/0 = SubResource("StandardMaterial3D_b3shm")
+
+[node name="AnimatableBody3D" type="StaticBody3D" parent="filing_cabinet_draw" index="3" unique_id=258527503]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="filing_cabinet_draw/AnimatableBody3D" index="0" unique_id=2044529504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18466187, -0.028137207, 0)
+shape = SubResource("BoxShape3D_0524c")
+
+[node name="filing_cabinet_draw2" parent="." index="2" unique_id=303495361 instance=ExtResource("2_odq2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21962982, -0.079587825, 0)
+script = ExtResource("3_0524c")
+
+[node name="Draw" parent="filing_cabinet_draw2" index="0" unique_id=500539435]
+surface_material_override/0 = SubResource("StandardMaterial3D_0524c")
+
+[node name="Select3D" parent="filing_cabinet_draw2" index="1" unique_id=1165508634 instance=ExtResource("4_0524c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="filing_cabinet_draw2/Select3D" index="0" unique_id=1963729641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08383179, -0.03930664, 0)
+shape = SubResource("BoxShape3D_b3shm")
+
+[node name="Draw_001" parent="filing_cabinet_draw2" index="2" unique_id=723271197]
+surface_material_override/0 = SubResource("StandardMaterial3D_b3shm")
+
+[node name="AnimatableBody3D" type="StaticBody3D" parent="filing_cabinet_draw2" index="3" unique_id=2013592182]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="filing_cabinet_draw2/AnimatableBody3D" index="0" unique_id=475093684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18466187, -0.028137207, 0)
+shape = SubResource("BoxShape3D_0524c")
+
+[node name="filing_cabinet_draw3" parent="." index="3" unique_id=2143439059 instance=ExtResource("2_odq2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21962982, 0.21688482, 0)
+script = ExtResource("3_0524c")
+
+[node name="Draw" parent="filing_cabinet_draw3" index="0" unique_id=500539435]
+surface_material_override/0 = SubResource("StandardMaterial3D_0524c")
+
+[node name="Select3D" parent="filing_cabinet_draw3" index="1" unique_id=1931185495 instance=ExtResource("4_0524c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="filing_cabinet_draw3/Select3D" index="0" unique_id=576094394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08383179, -0.03930664, 0)
+shape = SubResource("BoxShape3D_b3shm")
+
+[node name="Draw_001" parent="filing_cabinet_draw3" index="2" unique_id=723271197]
+surface_material_override/0 = SubResource("StandardMaterial3D_b3shm")
+
+[node name="AnimatableBody3D" type="StaticBody3D" parent="filing_cabinet_draw3" index="3" unique_id=954023152]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="filing_cabinet_draw3/AnimatableBody3D" index="0" unique_id=2014332379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18466187, -0.028137207, 0)
+shape = SubResource("BoxShape3D_0524c")
+
+[node name="filing_cabinet_draw4" parent="." index="4" unique_id=1587344961 instance=ExtResource("2_odq2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21962982, 0.5129174, 0)
+script = ExtResource("3_0524c")
+locked = true
+
+[node name="Draw" parent="filing_cabinet_draw4" index="0" unique_id=500539435]
+surface_material_override/0 = SubResource("StandardMaterial3D_0524c")
+
+[node name="Select3D" parent="filing_cabinet_draw4" index="1" unique_id=620416240 instance=ExtResource("4_0524c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="filing_cabinet_draw4/Select3D" index="0" unique_id=1400691961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08383179, -0.03930664, 0)
+shape = SubResource("BoxShape3D_b3shm")
+
+[node name="Draw_001" parent="filing_cabinet_draw4" index="2" unique_id=723271197]
+surface_material_override/0 = SubResource("StandardMaterial3D_b3shm")
+
+[node name="AnimatableBody3D" type="StaticBody3D" parent="filing_cabinet_draw4" index="3" unique_id=20899192]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="filing_cabinet_draw4/AnimatableBody3D" index="0" unique_id=1407658835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18466187, -0.028137207, 0)
+shape = SubResource("BoxShape3D_0524c")
+
+[node name="Keypad" parent="filing_cabinet_draw4" index="4" unique_id=891557776 instance=ExtResource("5_b3shm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.12549338, -0.04311627, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="5" unique_id=1356424456]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1003154159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03466797, 0.037597656, 0)
+shape = SubResource("BoxShape3D_0wcpa")
+
+[connection signal="triggered" from="filing_cabinet_draw/Select3D" to="filing_cabinet_draw" method="interract"]
+[connection signal="triggered" from="filing_cabinet_draw2/Select3D" to="filing_cabinet_draw2" method="interract"]
+[connection signal="triggered" from="filing_cabinet_draw3/Select3D" to="filing_cabinet_draw3" method="interract"]
+[connection signal="triggered" from="filing_cabinet_draw4/Select3D" to="filing_cabinet_draw4" method="interract"]
+[connection signal="unlocked" from="filing_cabinet_draw4/Keypad" to="filing_cabinet_draw4" method="unlock"]
+
+[editable path="filing_cabinet_draw"]
+[editable path="filing_cabinet_draw2"]
+[editable path="filing_cabinet_draw3"]
+[editable path="filing_cabinet_draw4"]

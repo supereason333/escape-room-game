@@ -6,16 +6,16 @@
 [ext_resource type="Script" uid="uid://ciwr40tr0xj47" path="res://scripts/things/camera_override.gd" id="4_67vji"]
 [ext_resource type="Texture2D" uid="uid://ke70xxa0gyb7" path="res://assets/icon.svg" id="5_67vji"]
 [ext_resource type="Script" uid="uid://cytreykh1q41y" path="res://scripts/things/computer/computer_ui.gd" id="5_bhh2s"]
-[ext_resource type="Shader" uid="uid://dfl6o5dti1f5g" path="res://resources/crt_shader.gdshader" id="6_jry6c"]
+[ext_resource type="Shader" uid="uid://be86ox3enosu4" path="res://resources/crt_shader2.gdshader" id="6_bhh2s"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bhh2s"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_64sdq"]
 viewport_path = NodePath("../ComputerUI/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64sdq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ormek"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_bhh2s")
+emission_texture = SubResource("ViewportTexture_64sdq")
 disable_receive_shadows = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v5i0k"]
@@ -25,13 +25,21 @@ size = Vector3(1.6950684, 1.8496094, 3.5158691)
 size = Vector3(0.2841797, 0.72753906, 0.6875)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bhh2s"]
-shader = ExtResource("6_jry6c")
-shader_parameter/scanlines_1 = 500.0
-shader_parameter/scanlines_2 = 100.0
-shader_parameter/scan_reduction = 0.005
-shader_parameter/vinnette_alpla = 1.0
-shader_parameter/vinnette_inner_radius = 0.0
-shader_parameter/vinnette_outer_radius = 1.0
+shader = ExtResource("6_bhh2s")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.03
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
 
 [node name="Table" type="Node3D" unique_id=1729802368]
 
@@ -39,7 +47,7 @@ shader_parameter/vinnette_outer_radius = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26006183, 0.5316697, 0)
 
 [node name="Screen" parent="screen" index="0" unique_id=893620713]
-surface_material_override/0 = SubResource("StandardMaterial3D_64sdq")
+surface_material_override/0 = SubResource("StandardMaterial3D_ormek")
 
 [node name="table" parent="." unique_id=1017902695 instance=ExtResource("2_kl0hw")]
 

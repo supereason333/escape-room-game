@@ -20,6 +20,10 @@ var camera_zoomed := false
 var pos_reset_queued := false
 var reset_pos:Vector2
 
+var normal_height := 0.0
+var crouch_height := -0.5
+var crouching := false
+
 var camera_override := false:
 	set(value):
 		if value != camera_override:
@@ -31,10 +35,12 @@ var camera_override := false:
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	normal_height = cam_rotate.position.y
 
 func _physics_process(_dt: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var target_speed := sprint_speed if Input.is_action_pressed("sprint") else walk_speed
+	if crouching: target_speed = walk_speed / 2
 	var target_velocity := Vector3 (
 		input_dir.x,
 		0.0,
@@ -71,6 +77,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_released("zoom") and camera_zoomed:
 		camera_zoomed = false
 		create_tween().tween_property(camera, "fov", 75, 0.1)
+
+	if event.is_action_pressed("crouch") and !crouching:
+		crouching = true
+		create_tween().tween_property(cam_rotate, "position:y", normal_height + crouch_height, 0.1)
+	elif event.is_action_released("crouch") and crouching:
+		crouching = false
+		create_tween().tween_property(cam_rotate, "position:y", normal_height, 0.1)
 
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
