@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6iiuro6ydkia"]
 
 [ext_resource type="PackedScene" uid="uid://by63p0x31yo05" path="res://assets/models/bookshelf.fbx" id="1_p42su"]
-[ext_resource type="Material" uid="uid://bm1h17sp684ip" path="res://resources/book_dar_materia.tres" id="2_kccur"]
+[ext_resource type="Material" uid="uid://bm1h17sp684ip" path="res://resources/book_dar_material.tres" id="2_kccur"]
 
 [node name="bookshelf" unique_id=836207381 instance=ExtResource("1_p42su")]
 

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkpkugdq7n13u"]
+
+[ext_resource type="PackedScene" uid="uid://ch0ye1fmhsrkm" path="res://assets/models/breaker_wires.fbx" id="1_t147b"]
+[ext_resource type="Material" uid="uid://dah7ide1r3bns" path="res://resources/black_material.tres" id="2_v46nr"]
+
+[node name="breaker_wires" unique_id=70496195 instance=ExtResource("1_t147b")]
+
+[node name="Cube_128" parent="." index="0" unique_id=864119225]
+surface_material_override/0 = ExtResource("2_v46nr")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxvutgyug83ew"]
 
 [ext_resource type="PackedScene" uid="uid://by63p0x31yo05" path="res://assets/models/bookshelf.fbx" id="1_qqu2k"]
-[ext_resource type="Material" uid="uid://bm1h17sp684ip" path="res://resources/book_dar_materia.tres" id="2_yhnwu"]
+[ext_resource type="Material" uid="uid://bm1h17sp684ip" path="res://resources/book_dar_material.tres" id="2_yhnwu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qqu2k"]
 size = Vector3(0.60302734, 2.3867798, 3.2822266)
