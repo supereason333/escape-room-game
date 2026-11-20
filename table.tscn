@@ -1,21 +1,24 @@
 [gd_scene format=3 uid="uid://bhx23jodvvj4n"]
 
+[ext_resource type="Script" uid="uid://de3q5r0agu5e8" path="res://scripts/things/computer/table.gd" id="1_ormek"]
 [ext_resource type="PackedScene" uid="uid://2k50o8bq7klp" path="res://assets/models/screen.fbx" id="1_v5i0k"]
+[ext_resource type="PackedScene" uid="uid://6buo0d0llu2v" path="res://prefabs/table/computer_boot.tscn" id="2_ibia0"]
 [ext_resource type="PackedScene" uid="uid://bbf2hcyytgjvf" path="res://assets/models/table.fbx" id="2_kl0hw"]
 [ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="3_vjl2i"]
 [ext_resource type="Script" uid="uid://ciwr40tr0xj47" path="res://scripts/things/camera_override.gd" id="4_67vji"]
-[ext_resource type="Texture2D" uid="uid://ke70xxa0gyb7" path="res://assets/icon.svg" id="5_67vji"]
 [ext_resource type="Script" uid="uid://cytreykh1q41y" path="res://scripts/things/computer/computer_ui.gd" id="5_bhh2s"]
-[ext_resource type="Shader" uid="uid://be86ox3enosu4" path="res://resources/crt_shader2.gdshader" id="6_bhh2s"]
+[ext_resource type="Script" uid="uid://dy5xxqb1p6o3a" path="res://scripts/things/computer/computer_viewport.gd" id="6_bhh2s"]
+[ext_resource type="Shader" uid="uid://be86ox3enosu4" path="res://resources/crt_shader2.gdshader" id="8_ibia0"]
+[ext_resource type="PackedScene" uid="uid://bhkl523px3foi" path="res://prefabs/table/computer_login_screen.tscn" id="10_ibia0"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_64sdq"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ibia0"]
 viewport_path = NodePath("../ComputerUI/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ormek"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnpc2"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_64sdq")
+emission_texture = SubResource("ViewportTexture_ibia0")
 disable_receive_shadows = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v5i0k"]
@@ -25,8 +28,8 @@ size = Vector3(1.6950684, 1.8496094, 3.5158691)
 size = Vector3(0.2841797, 0.72753906, 0.6875)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bhh2s"]
-shader = ExtResource("6_bhh2s")
-shader_parameter/resolution = Vector2(320, 180)
+shader = ExtResource("8_ibia0")
+shader_parameter/resolution = Vector2(320, 240)
 shader_parameter/scan_line_amount = 1.0
 shader_parameter/warp_amount = 0.1
 shader_parameter/noise_amount = 0.03
@@ -41,13 +44,16 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
-[node name="Table" type="Node3D" unique_id=1729802368]
+[node name="Table" type="Node3D" unique_id=1729802368 node_paths=PackedStringArray("viewport")]
+script = ExtResource("1_ormek")
+default_scene = ExtResource("2_ibia0")
+viewport = NodePath("ComputerUI/SubViewport")
 
 [node name="screen" parent="." unique_id=1311287868 instance=ExtResource("1_v5i0k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26006183, 0.5316697, 0)
 
 [node name="Screen" parent="screen" index="0" unique_id=893620713]
-surface_material_override/0 = SubResource("StandardMaterial3D_ormek")
+surface_material_override/0 = SubResource("StandardMaterial3D_xnpc2")
 
 [node name="table" parent="." unique_id=1017902695 instance=ExtResource("2_kl0hw")]
 
@@ -82,7 +88,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="DisplayRect" type="Control" parent="." unique_id=1093871312]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -108,16 +113,18 @@ handle_input_locally = false
 use_hdr_2d = true
 size = Vector2i(640, 480)
 render_target_update_mode = 4
+script = ExtResource("6_bhh2s")
 
-[node name="ComputerUI" type="Control" parent="ComputerUI/SubViewport" unique_id=525843015]
+[node name="Control" type="Control" parent="ComputerUI/SubViewport" unique_id=851223792]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="Background" type="ColorRect" parent="ComputerUI/SubViewport/ComputerUI" unique_id=523973144]
+[node name="Background" type="ColorRect" parent="ComputerUI/SubViewport/Control" unique_id=879825822]
 z_index = -6
 layout_mode = 1
 anchors_preset = 15
@@ -125,9 +132,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Shader" type="ColorRect" parent="ComputerUI/SubViewport/ComputerUI" unique_id=804068182]
+[node name="Shader" type="ColorRect" parent="ComputerUI/SubViewport/Control" unique_id=1371334048]
 z_index = 6
 material = SubResource("ShaderMaterial_bhh2s")
 layout_mode = 1
@@ -138,41 +146,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Icon" type="Sprite2D" parent="ComputerUI/SubViewport/ComputerUI" unique_id=63211493]
-position = Vector2(251, 213)
-texture = ExtResource("5_67vji")
+[node name="ComputerUI" type="Control" parent="ComputerUI/SubViewport" unique_id=1080947860]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="Button" type="Button" parent="ComputerUI/SubViewport/ComputerUI" unique_id=1403632178]
-layout_mode = 0
-offset_left = 382.0
-offset_top = 59.0
-offset_right = 605.0
-offset_bottom = 256.0
-text = "awddwa"
+[node name="ComputerLoginScreen" parent="ComputerUI/SubViewport/ComputerUI" unique_id=1466380100 instance=ExtResource("10_ibia0")]
+layout_mode = 1
 
-[node name="Button2" type="Button" parent="ComputerUI/SubViewport/ComputerUI" unique_id=337534270]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 384.0
-offset_right = 207.0
-offset_bottom = 438.0
-text = "awddwa"
-
-[node name="SpinBox" type="SpinBox" parent="ComputerUI/SubViewport/ComputerUI" unique_id=655055576]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 132.0
-offset_right = 134.5
-offset_bottom = 163.0
-
-[node name="LineEdit" type="LineEdit" parent="ComputerUI/SubViewport/ComputerUI" unique_id=1219594870]
-layout_mode = 0
-offset_left = 72.0
-offset_top = 52.0
-offset_right = 140.5
-offset_bottom = 83.0
-placeholder_text = "text"
-
+[connection signal="tree_entered" from="." to="." method="power"]
+[connection signal="triggered" from="Select3D" to="." method="_on_triggered"]
 [connection signal="triggered" from="Select3D" to="CameraOverride" method="override"]
 [connection signal="override_changed" from="CameraOverride" to="DisplayRect" method="_on_camera_override_changed"]
 

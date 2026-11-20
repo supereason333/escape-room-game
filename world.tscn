@@ -115,3 +115,5 @@ transform = Transform3D(0.43976688, 0, -0.89811194, 0, 1, 0, 0.89811194, 0, 0.43
 
 [node name="ElectricalBox" parent="." unique_id=1465126435 instance=ExtResource("14_70uel")]
 transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 10.061656, 1.2805166, -2.6937015)
+
+[connection signal="power_on" from="ElectricalBox" to="Table" method="power"]

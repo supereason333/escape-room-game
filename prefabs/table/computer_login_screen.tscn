@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bhkl523px3foi"]
+
+[ext_resource type="Texture2D" uid="uid://d3em8vi8pl6u2" path="res://assets/textures/exam.png" id="1_516wf"]
+[ext_resource type="Texture2D" uid="uid://ke70xxa0gyb7" path="res://assets/icon.svg" id="1_ldytl"]
+[ext_resource type="Script" uid="uid://1t80vf6afd6p" path="res://scripts/things/computer/computer_login_screen.gd" id="1_ojg6n"]
+[ext_resource type="PackedScene" uid="uid://0cuawhaun3uw" path="res://prefabs/table/computer_main.tscn" id="2_n4csj"]
+
+[node name="ComputerLoginScreen" type="Control" unique_id=1466380100]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojg6n")
+next_scene = ExtResource("2_n4csj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1753944892]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_516wf")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1092178862]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1087996822]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1944024669]
+layout_mode = 2
+text = "Login"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=2116631692]
+layout_mode = 2
+texture = ExtResource("1_ldytl")
+stretch_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/VBoxContainer" unique_id=332845558]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+placeholder_text = "password"
+
+[connection signal="text_submitted" from="CenterContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]

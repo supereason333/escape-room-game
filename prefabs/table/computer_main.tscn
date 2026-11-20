@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://0cuawhaun3uw"]
+
+[ext_resource type="Texture2D" uid="uid://col8xu2t8fr1w" path="res://assets/background.jpeg" id="1_5y0im"]
+[ext_resource type="Texture2D" uid="uid://ke70xxa0gyb7" path="res://assets/icon.svg" id="2_q63fs"]
+[ext_resource type="FontFile" uid="uid://bd732aclmmbwc" path="res://assets/GoogleSansCode-VariableFont_MONO,wght.ttf" id="3_taiox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taiox"]
+bg_color = Color(0.34968925, 0.34968933, 0.34968916, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.34968925, 0.34968933, 0.34968916, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q63fs"]
+
+[node name="ComputerMain" type="Control" unique_id=224534653]
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="Background" type="TextureRect" parent="." unique_id=503617214]
+z_index = -2
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
+texture = ExtResource("1_5y0im")
+metadata/_edit_lock_ = true
+
+[node name="TopBar" type="PanelContainer" parent="." unique_id=1512961221]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_taiox")
+
+[node name="TopBar" type="HBoxContainer" parent="TopBar" unique_id=1119185141]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TopBar/TopBar" unique_id=1945214907]
+layout_mode = 2
+texture = ExtResource("2_q63fs")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Control" type="Control" parent="TopBar/TopBar" unique_id=1295334066]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TopBar/TopBar" unique_id=929198956]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_taiox")
+text = "00:00"
+label_settings = SubResource("LabelSettings_q63fs")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=971185443]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_taiox")
+
+[node name="Bottombar" type="HBoxContainer" parent="PanelContainer" unique_id=1757101122]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/Bottombar" unique_id=1933386106]
+layout_mode = 2
+texture_normal = ExtResource("2_q63fs")
