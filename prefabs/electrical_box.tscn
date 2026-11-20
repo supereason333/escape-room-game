@@ -5,9 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://dkpkugdq7n13u" path="res://prefabs/breaker_wires.tscn" id="3_2ju6d"]
 [ext_resource type="Material" uid="uid://6hct8maqacb6" path="res://resources/indicator_materia.tres" id="4_xlm84"]
 [ext_resource type="Material" uid="uid://dah7ide1r3bns" path="res://resources/black_material.tres" id="5_ji001"]
+[ext_resource type="Script" uid="uid://df3xpb8p14yef" path="res://scripts/things/electrical_box/breakers.gd" id="6_j0vpp"]
 [ext_resource type="Material" uid="uid://8kucvl7c63g4" path="res://resources/white_materia.tres" id="6_xlm84"]
+[ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="7_gul64"]
 [ext_resource type="Material" uid="uid://ce1rx00rw5e47" path="res://resources/breaker_switch.tres" id="7_ji001"]
 [ext_resource type="FontFile" uid="uid://bd732aclmmbwc" path="res://assets/GoogleSansCode-VariableFont_MONO,wght.ttf" id="8_ji001"]
+[ext_resource type="Script" uid="uid://cp88qq54p7nfq" path="res://scripts/things/electrical_box/power_disp_label.gd" id="11_gul64"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sm453"]
 
@@ -35,6 +38,9 @@ size = Vector3(0.03, 0.03, 0.03)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lorar"]
 size = Vector3(0.80859375, 0.796875, 0.19824219)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mvgod"]
+size = Vector3(0.05493164, 0.16503906, 0.0859375)
+
 [sub_resource type="BoxMesh" id="BoxMesh_jnxqt"]
 size = Vector3(0.11, 0.057, 0.03)
 
@@ -59,9 +65,14 @@ size = Vector2(0.082, 0.06)
 [sub_resource type="QuadMesh" id="QuadMesh_j0vpp"]
 size = Vector2(0.16, 0.08)
 
-[node name="ElectricalBox" type="MeshInstance3D" unique_id=1465126435]
+[sub_resource type="QuadMesh" id="QuadMesh_mvgod"]
+size = Vector2(0.16, 0.08)
+
+[node name="ElectricalBox" type="MeshInstance3D" unique_id=1465126435 node_paths=PackedStringArray("lights", "selecters")]
 mesh = SubResource("BoxMesh_2o6r5")
 script = ExtResource("1_lorar")
+lights = [NodePath("breakers/PowerIndicator/Indicator"), NodePath("breakers2/PowerIndicator/Indicator"), NodePath("BreakerBottomIndicator/Indicator")]
+selecters = [NodePath("breakers/0"), NodePath("breakers/1"), NodePath("breakers/2"), NodePath("breakers2/0"), NodePath("breakers2/1"), NodePath("breakers2/2"), NodePath("breakers3/0"), NodePath("breakers3/1"), NodePath("breakers3/2"), NodePath("breakers4/0"), NodePath("breakers4/1"), NodePath("breakers4/2")]
 
 [node name="Cable" type="MeshInstance3D" parent="." unique_id=2110209225]
 transform = Transform3D(1.0000001, 0, 0, 0, -4.371139e-08, -1.0000001, 0, 1, -4.3711392e-08, 0.0023638727, -2.3160322, -0.07465052)
@@ -107,11 +118,15 @@ transform = Transform3D(1.3113414e-07, 0, 0.9999999, -1, -4.3711385e-08, 1.31134
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=839791411]
 shape = SubResource("BoxShape3D_lorar")
 
-[node name="breakers" parent="." unique_id=158097673 instance=ExtResource("2_jnxqt")]
+[node name="breakers" parent="." unique_id=1843821550 node_paths=PackedStringArray("levers", "selecters") instance=ExtResource("2_jnxqt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.24781525, 0.31934553, 0.10403809)
+script = ExtResource("6_j0vpp")
+target_value = 2
+levers = [NodePath("Switches/Cube_131"), NodePath("Switches/Cube_130"), NodePath("Switches/Cube_129")]
+selecters = [NodePath("0"), NodePath("1"), NodePath("2")]
 
 [node name="PowerIndicator" type="MeshInstance3D" parent="breakers" unique_id=1555836817]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.003092205, -0.20181382, -0.19433476)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.003092207, -0.20181382, -0.19433476)
 mesh = SubResource("BoxMesh_j0vpp")
 
 [node name="Indicator" type="MeshInstance3D" parent="breakers/PowerIndicator" unique_id=298612637]
@@ -120,8 +135,29 @@ visible = false
 mesh = SubResource("BoxMesh_j0vpp")
 surface_material_override/0 = ExtResource("4_xlm84")
 
-[node name="breakers2" parent="." unique_id=2116232165 instance=ExtResource("2_jnxqt")]
+[node name="0" parent="breakers" unique_id=1980313047 instance=ExtResource("7_gul64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4901161e-08, 0, -0.115773946)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers/0" unique_id=1641715338]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="1" parent="breakers" unique_id=1423917143 instance=ExtResource("7_gul64")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers/1" unique_id=2090456308]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="2" parent="breakers" unique_id=2100707810 instance=ExtResource("7_gul64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.114114076)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers/2" unique_id=1919497116]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="breakers2" parent="." unique_id=924095951 node_paths=PackedStringArray("levers", "selecters") instance=ExtResource("2_jnxqt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.2629153, 0.31934553, 0.104038104)
+script = ExtResource("6_j0vpp")
+target_value = 4
+levers = [NodePath("Switches/Cube_131"), NodePath("Switches/Cube_130"), NodePath("Switches/Cube_129")]
+selecters = [NodePath("0"), NodePath("1"), NodePath("2")]
 
 [node name="PowerIndicator" type="MeshInstance3D" parent="breakers2" unique_id=1309161907]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0030921872, -0.20181382, 0.2106338)
@@ -133,11 +169,66 @@ visible = false
 mesh = SubResource("BoxMesh_j0vpp")
 surface_material_override/0 = ExtResource("4_xlm84")
 
-[node name="breakers3" parent="." unique_id=70610396 instance=ExtResource("2_jnxqt")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.20195687, -0.13668561, 0.10403809)
+[node name="0" parent="breakers2" unique_id=431319552 instance=ExtResource("7_gul64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0, -0.115773946)
 
-[node name="breakers4" parent="." unique_id=2109857360 instance=ExtResource("2_jnxqt")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers2/0" unique_id=706804490]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="1" parent="breakers2" unique_id=616313177 instance=ExtResource("7_gul64")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers2/1" unique_id=287156945]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="2" parent="breakers2" unique_id=1768766189 instance=ExtResource("7_gul64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.114114076)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers2/2" unique_id=677938625]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="breakers3" parent="." unique_id=926772931 node_paths=PackedStringArray("levers", "selecters") instance=ExtResource("2_jnxqt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.20195687, -0.13668561, 0.10403809)
+script = ExtResource("6_j0vpp")
+target_value = 520
+levers = [NodePath("../breakers4/Switches/Cube_131"), NodePath("../breakers4/Switches/Cube_130"), NodePath("../breakers4/Switches/Cube_129"), NodePath("Switches/Cube_131"), NodePath("Switches/Cube_130"), NodePath("Switches/Cube_129")]
+selecters = [NodePath("../breakers4/0"), NodePath("../breakers4/1"), NodePath("../breakers4/2"), NodePath("0"), NodePath("1"), NodePath("2")]
+
+[node name="0" parent="breakers3" unique_id=845292009 instance=ExtResource("7_gul64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0, -0.115773946)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers3/0" unique_id=1246014151]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="1" parent="breakers3" unique_id=486184969 instance=ExtResource("7_gul64")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers3/1" unique_id=1527939675]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="2" parent="breakers3" unique_id=1899677292 instance=ExtResource("7_gul64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.114114076)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers3/2" unique_id=1151624781]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="breakers4" parent="." unique_id=467811274 instance=ExtResource("2_jnxqt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.19881755, -0.13668561, 0.104038104)
+
+[node name="0" parent="breakers4" unique_id=1487315260 instance=ExtResource("7_gul64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0, -0.115773946)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers4/0" unique_id=1569427722]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="1" parent="breakers4" unique_id=1079492862 instance=ExtResource("7_gul64")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers4/1" unique_id=1170893972]
+shape = SubResource("BoxShape3D_mvgod")
+
+[node name="2" parent="breakers4" unique_id=1839320618 instance=ExtResource("7_gul64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.114114076)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="breakers4/2" unique_id=205871304]
+shape = SubResource("BoxShape3D_mvgod")
 
 [node name="BreakerBottomIndicator" type="MeshInstance3D" parent="." unique_id=583840019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011527687, -0.33849943, 0.10094589)
@@ -289,7 +380,8 @@ surface_material_override/0 = ExtResource("5_ji001")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1678464, -0.396091, 0.10472751)
 pixel_size = 0.001
 modulate = Color(0.72464263, 0.7246426, 0.7246426, 1)
-text = "588"
+text = "520
+"
 font = ExtResource("8_ji001")
 font_size = 64
 outline_size = 0
@@ -298,3 +390,32 @@ outline_size = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0014364719)
 mesh = SubResource("QuadMesh_j0vpp")
 surface_material_override/0 = ExtResource("5_ji001")
+
+[node name="PowerDispLabel" type="Label3D" parent="." unique_id=2013252845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4844101, 0.13896707, 0.10440014)
+pixel_size = 0.001
+modulate = Color(0, 1, 0, 1)
+text = "13"
+font = ExtResource("8_ji001")
+font_size = 64
+outline_size = 0
+script = ExtResource("11_gul64")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PowerDispLabel" unique_id=108740889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0014364719)
+mesh = SubResource("QuadMesh_mvgod")
+surface_material_override/0 = ExtResource("5_ji001")
+
+[connection signal="power_on" from="." to="Cable/CentralWire/PowerIndicator/Indicator" method="show"]
+[connection signal="turned_off" from="breakers" to="breakers/PowerIndicator/Indicator" method="hide"]
+[connection signal="turned_on" from="breakers" to="breakers/PowerIndicator/Indicator" method="show"]
+[connection signal="updated" from="breakers" to="PowerDispLabel" method="changed"]
+[connection signal="turned_off" from="breakers2" to="breakers2/PowerIndicator/Indicator" method="hide"]
+[connection signal="turned_on" from="breakers2" to="breakers2/PowerIndicator/Indicator" method="show"]
+[connection signal="turned_off" from="breakers3" to="BreakerBottomIndicator/Indicator" method="hide"]
+[connection signal="turned_on" from="breakers3" to="BreakerBottomIndicator/Indicator" method="show"]
+
+[editable path="breakers"]
+[editable path="breakers2"]
+[editable path="breakers3"]
+[editable path="breakers4"]
