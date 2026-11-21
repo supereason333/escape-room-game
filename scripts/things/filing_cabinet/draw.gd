@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var items:Array[Node3D]
 @export var locked := false
 
 var open_depth := 0.5
@@ -10,6 +11,9 @@ var moving := false
 func _ready() -> void:
 	initial_x = position.x
 
+	for item in items:
+		item.position.y -= 1000
+
 func interract(_pl:Player):
 	if locked: return
 	if moving: return
@@ -17,10 +21,16 @@ func interract(_pl:Player):
 		open = false
 		moving = true
 		create_tween().tween_property(self, "position:x", initial_x, 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT).finished.connect(move_stop)
+
+		for item in items:
+			item.position.y -= 1000
 	else:
 		open = true
 		moving = true
 		create_tween().tween_property(self, "position:x", initial_x + open_depth, 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT).finished.connect(move_stop)
+
+		for item in items:
+			item.position.y += 1000
 
 func move_stop():
 	moving = false

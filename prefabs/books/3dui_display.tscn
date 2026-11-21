@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://8pr0r22jxql4"]
+
+[ext_resource type="Script" uid="uid://cd6sm8y704hq4" path="res://scripts/things/3dui_display.gd" id="1_xt6e8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wft6"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_bf4mi"]
+sky_material = SubResource("ProceduralSkyMaterial_0wft6")
+
+[sub_resource type="Environment" id="Environment_oqsgh"]
+background_mode = 2
+sky = SubResource("Sky_bf4mi")
+
+[node name="3DUIDisplay" type="Control" unique_id=1506862065]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xt6e8")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=624471690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=600229684]
+own_world_3d = true
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="Load" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=179808119]
+unique_name_in_owner = true
+
+[node name="Stuff" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=699494337]
+
+[node name="CamTilt" type="Node3D" parent="SubViewportContainer/SubViewport/Stuff" unique_id=1070135772]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Stuff/CamTilt" unique_id=2037482790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25568962)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Stuff" unique_id=482980788]
+transform = Transform3D(0.59923756, 0.5074933, -0.6191648, -0.3529356, 0.8616557, 0.36467224, 0.7185756, 0, 0.69544894, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Stuff" unique_id=2043412932]
+environment = SubResource("Environment_oqsgh")
+
+[node name="Control" type="Control" parent="." unique_id=627381222]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1

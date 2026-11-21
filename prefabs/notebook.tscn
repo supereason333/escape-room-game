@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c6yfumfw51d6v"]
+
+[ext_resource type="PackedScene" uid="uid://coykj36whdrxa" path="res://assets/models/notebook.fbx" id="1_4qbeg"]
+[ext_resource type="FontFile" uid="uid://52gsv6blww3d" path="res://assets/IBM_Plex_Mono/IBMPlexMono-Bold.ttf" id="2_1m64s"]
+[ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="3_x2huh"]
+[ext_resource type="Script" uid="uid://inccqs4cu3k5" path="res://scripts/things/ui_override.gd" id="4_beib8"]
+[ext_resource type="PackedScene" uid="uid://bb48xxntyjfpa" path="res://prefabs/notebook_ui_display.tscn" id="5_a15i1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qbeg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1m64s"]
+albedo_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_beib8"]
+size = Vector3(0.21191406, 0.0107421875, 0.15039063)
+
+[node name="notebook" unique_id=751315433 instance=ExtResource("1_4qbeg")]
+
+[node name="Passwords Notebook" parent="." index="0" unique_id=1586942550]
+surface_material_override/0 = SubResource("StandardMaterial3D_4qbeg")
+
+[node name="Label" parent="Passwords Notebook" index="0" unique_id=1853920657]
+surface_material_override/0 = SubResource("StandardMaterial3D_1m64s")
+
+[node name="Label3D" type="Label3D" parent="." index="1" unique_id=1641642382]
+transform = Transform3D(1.9106855e-15, -1, -4.371139e-08, -4.371139e-08, -4.371139e-08, 1, -1, 0, -4.371139e-08, 0.015921626, 0.006197989, 0.023779366)
+pixel_size = 0.0005
+outline_modulate = Color(0, 0, 0, 0)
+text = "Passwords
+"
+font = ExtResource("2_1m64s")
+
+[node name="Select3D" parent="." index="2" unique_id=1980313047 instance=ExtResource("3_x2huh")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Select3D" index="0" unique_id=200867101]
+shape = SubResource("BoxShape3D_beib8")
+
+[node name="UiOverride" type="Node" parent="." index="3" unique_id=730140060]
+script = ExtResource("4_beib8")
+ui_scene = ExtResource("5_a15i1")
+
+[connection signal="triggered" from="Select3D" to="UiOverride" method="override"]

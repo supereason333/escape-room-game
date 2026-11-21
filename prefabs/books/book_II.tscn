@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://r64ujkdyabuy"]
+
+[ext_resource type="PackedScene" uid="uid://l0h3odbjwtk5" path="res://assets/models/book.fbx" id="1_0s3ao"]
+[ext_resource type="Texture2D" uid="uid://chdct805a1khr" path="res://assets/textures/books/II Cover.jpg" id="2_0s3ao"]
+[ext_resource type="Material" uid="uid://8kucvl7c63g4" path="res://resources/white_materia.tres" id="3_ke1bi"]
+[ext_resource type="Script" uid="uid://inccqs4cu3k5" path="res://scripts/things/ui_override.gd" id="4_vakct"]
+[ext_resource type="PackedScene" uid="uid://dd6miax88p4as" path="res://prefabs/books/book_II_ui_disp.tscn" id="5_lbnvf"]
+[ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="6_i0dmp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nbo8"]
+albedo_texture = ExtResource("2_0s3ao")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2fimu"]
+size = Vector3(0.14477539, 0.0146484375, 0.20605469)
+
+[node name="book" unique_id=726544874 instance=ExtResource("1_0s3ao")]
+
+[node name="Book" parent="." index="0" unique_id=2023041777]
+surface_material_override/0 = SubResource("StandardMaterial3D_3nbo8")
+
+[node name="BookPages" parent="Book" index="0" unique_id=615469263]
+surface_material_override/0 = ExtResource("3_ke1bi")
+
+[node name="UiOverride" type="Node" parent="." index="1" unique_id=637986002]
+script = ExtResource("4_vakct")
+ui_scene = ExtResource("5_lbnvf")
+
+[node name="Select3D" parent="." index="2" unique_id=1980313047 instance=ExtResource("6_i0dmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0060981624, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Select3D" index="0" unique_id=1496669496]
+shape = SubResource("BoxShape3D_2fimu")
+
+[connection signal="triggered" from="Select3D" to="UiOverride" method="override"]

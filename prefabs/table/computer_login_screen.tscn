@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ojg6n")
 next_scene = ExtResource("2_n4csj")
+password = "VANADIUM"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1753944892]
 layout_mode = 1

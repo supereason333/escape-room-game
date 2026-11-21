@@ -29,47 +29,64 @@ offset_bottom = 480.0
 texture = ExtResource("1_5y0im")
 metadata/_edit_lock_ = true
 
-[node name="TopBar" type="PanelContainer" parent="." unique_id=1512961221]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=802171214]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 27.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="PanelContainer" parent="VBoxContainer" unique_id=1512961221]
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_taiox")
 
-[node name="TopBar" type="HBoxContainer" parent="TopBar" unique_id=1119185141]
+[node name="TopBar" type="HBoxContainer" parent="VBoxContainer/TopBar" unique_id=1119185141]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="TopBar/TopBar" unique_id=1945214907]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TopBar/TopBar" unique_id=1945214907]
 layout_mode = 2
 texture = ExtResource("2_q63fs")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Control" type="Control" parent="TopBar/TopBar" unique_id=1295334066]
+[node name="Control" type="Control" parent="VBoxContainer/TopBar/TopBar" unique_id=1295334066]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="TopBar/TopBar" unique_id=929198956]
+[node name="Label" type="Label" parent="VBoxContainer/TopBar/TopBar" unique_id=929198956]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_taiox")
 text = "00:00"
 label_settings = SubResource("LabelSettings_q63fs")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=971185443]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1399622746]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 6
+
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer" unique_id=1679367726]
+layout_mode = 2
+text = "aaa"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/Button" unique_id=1176027912]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -31.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+texture = ExtResource("2_q63fs")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=971185443]
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_taiox")
 
-[node name="Bottombar" type="HBoxContainer" parent="PanelContainer" unique_id=1757101122]
+[node name="Bottombar" type="HBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=1757101122]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/Bottombar" unique_id=1933386106]
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/Bottombar" unique_id=1261058169]
 layout_mode = 2
-texture_normal = ExtResource("2_q63fs")
+text = "buttonawda"

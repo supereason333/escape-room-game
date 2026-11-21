@@ -3,10 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://by63p0x31yo05" path="res://assets/models/bookshelf.fbx" id="1_qqu2k"]
 [ext_resource type="Material" uid="uid://bm1h17sp684ip" path="res://resources/book_dar_material.tres" id="2_yhnwu"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhnwu"]
+albedo_color = Color(1, 0.1882353, 0.4862745, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_qqu2k"]
 size = Vector3(0.60302734, 2.3867798, 3.2822266)
 
 [node name="bookshelf" unique_id=836207381 instance=ExtResource("1_qqu2k")]
+
+[node name="Cube_002" parent="Bookshelf/Empty" parent_id_path=PackedInt32Array(1767753277) index="1" unique_id=24423611]
+surface_material_override/0 = SubResource("StandardMaterial3D_yhnwu")
 
 [node name="Cube_026" parent="Bookshelf/Empty" parent_id_path=PackedInt32Array(1767753277) index="25" unique_id=801904370]
 surface_material_override/0 = ExtResource("2_yhnwu")

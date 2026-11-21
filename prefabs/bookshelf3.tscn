@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://by63p0x31yo05" path="res://assets/models/bookshelf.fbx" id="1_10vhi"]
 [ext_resource type="Material" uid="uid://bm1h17sp684ip" path="res://resources/book_dar_material.tres" id="2_6q7cl"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6q7cl"]
+albedo_color = Color(0.972549, 0.9764706, 0.21176471, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_10vhi"]
 size = Vector3(0.60302734, 2.3867798, 3.2822266)
 
@@ -10,6 +13,9 @@ size = Vector3(0.60302734, 2.3867798, 3.2822266)
 
 [node name="Cube_051" parent="Bookshelf/Empty" parent_id_path=PackedInt32Array(1767753277) index="50" unique_id=1564359760]
 surface_material_override/0 = ExtResource("2_6q7cl")
+
+[node name="Cube_083" parent="Bookshelf/Empty" parent_id_path=PackedInt32Array(1767753277) index="82" unique_id=1802798247]
+surface_material_override/0 = SubResource("StandardMaterial3D_6q7cl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=881426662]
 

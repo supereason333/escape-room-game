@@ -7,18 +7,31 @@
 [ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="3_vjl2i"]
 [ext_resource type="Script" uid="uid://ciwr40tr0xj47" path="res://scripts/things/camera_override.gd" id="4_67vji"]
 [ext_resource type="Script" uid="uid://cytreykh1q41y" path="res://scripts/things/computer/computer_ui.gd" id="5_bhh2s"]
+[ext_resource type="Texture2D" uid="uid://wr15jwsi00ww" path="res://assets/textures/sticky_notes/note4.jpg" id="5_ojgvt"]
 [ext_resource type="Script" uid="uid://dy5xxqb1p6o3a" path="res://scripts/things/computer/computer_viewport.gd" id="6_bhh2s"]
+[ext_resource type="Texture2D" uid="uid://dkc1oeo7lxayn" path="res://assets/textures/sticky_notes/note1.jpg" id="6_xl8i4"]
 [ext_resource type="Shader" uid="uid://be86ox3enosu4" path="res://resources/crt_shader2.gdshader" id="8_ibia0"]
 [ext_resource type="PackedScene" uid="uid://bhkl523px3foi" path="res://prefabs/table/computer_login_screen.tscn" id="10_ibia0"]
+[ext_resource type="PackedScene" uid="uid://bkw7r0kavelji" path="res://assets/models/stickynote1.fbx" id="11_urxxv"]
+[ext_resource type="Texture2D" uid="uid://vvcnhbd38x5e" path="res://assets/textures/sticky_notes/note5.jpg" id="12_2us7a"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ibia0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwhfc"]
+albedo_texture = ExtResource("12_2us7a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_364iv"]
+albedo_texture = ExtResource("5_ojgvt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2y1x0"]
+albedo_texture = ExtResource("6_xl8i4")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ojgvt"]
 viewport_path = NodePath("../ComputerUI/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnpc2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xl8i4"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
-emission_texture = SubResource("ViewportTexture_ibia0")
+emission_texture = SubResource("ViewportTexture_ojgvt")
 disable_receive_shadows = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v5i0k"]
@@ -49,11 +62,32 @@ script = ExtResource("1_ormek")
 default_scene = ExtResource("2_ibia0")
 viewport = NodePath("ComputerUI/SubViewport")
 
+[node name="stickynote1" parent="." unique_id=1446896345 instance=ExtResource("11_urxxv")]
+transform = Transform3D(0.17830423, 0.9839754, 0, -0.9839754, 0.17830423, 0, 0, 0, 1, 0.3020148, 0.3165914, -0.29876423)
+
+[node name="Sticky note_001" parent="stickynote1" index="0" unique_id=1253370280]
+transform = Transform3D(99.34947, -11.387949, -1.3575493e-06, 0, -1.1920929e-05, 100.00001, -11.38795, -99.349464, -1.1843378e-05, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_cwhfc")
+
+[node name="stickynote2" parent="." unique_id=863665101 instance=ExtResource("11_urxxv")]
+transform = Transform3D(0.17416814, 0.9846018, -0.014995618, -0.947816, 0.17175186, 0.2686004, 0.26704, -0.03256855, 0.9631351, 0.3026271, 0.3165914, -0.18814377)
+
+[node name="Sticky note_001" parent="stickynote2" index="0" unique_id=1253370280]
+transform = Transform3D(99.34947, -11.387949, -1.3575493e-06, 0, -1.1920929e-05, 100.00001, -11.38795, -99.349464, -1.1843378e-05, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_364iv")
+
+[node name="stickynote3" parent="." unique_id=498636033 instance=ExtResource("11_urxxv")]
+transform = Transform3D(0.17416814, 0.9846018, -0.014995614, -0.97811437, 0.17122005, -0.118220985, -0.113832906, 0.035257738, 0.99287426, 0.3026271, 0.3165914, 0.23748203)
+
+[node name="Sticky note_001" parent="stickynote3" index="0" unique_id=1253370280]
+transform = Transform3D(99.34947, -11.387949, -1.3575493e-06, 0, -1.1920929e-05, 100.00001, -11.38795, -99.349464, -1.1843378e-05, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_2y1x0")
+
 [node name="screen" parent="." unique_id=1311287868 instance=ExtResource("1_v5i0k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26006183, 0.5316697, 0)
 
 [node name="Screen" parent="screen" index="0" unique_id=893620713]
-surface_material_override/0 = SubResource("StandardMaterial3D_xnpc2")
+surface_material_override/0 = SubResource("StandardMaterial3D_xl8i4")
 
 [node name="table" parent="." unique_id=1017902695 instance=ExtResource("2_kl0hw")]
 
@@ -163,4 +197,7 @@ layout_mode = 1
 [connection signal="triggered" from="Select3D" to="CameraOverride" method="override"]
 [connection signal="override_changed" from="CameraOverride" to="DisplayRect" method="_on_camera_override_changed"]
 
+[editable path="stickynote1"]
+[editable path="stickynote2"]
+[editable path="stickynote3"]
 [editable path="screen"]

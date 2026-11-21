@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bq8iv6p173nib" path="res://assets/models/chess_pieces/pawn/scene.gltf" id="7_d63h6"]
 [ext_resource type="PackedScene" uid="uid://b5lfa6o2upg2s" path="res://assets/models/chess_pieces/queen/scene.gltf" id="8_taqtt"]
 [ext_resource type="PackedScene" uid="uid://dgysocu12riec" path="res://assets/models/chess_pieces/rook/scene.gltf" id="9_723q2"]
+[ext_resource type="PackedScene" uid="uid://bkw7r0kavelji" path="res://assets/models/stickynote1.fbx" id="10_b8iba"]
+[ext_resource type="Texture2D" uid="uid://cloorhtebamfg" path="res://assets/textures/sticky_notes/note2.jpg" id="11_d63h6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfskq"]
 albedo_texture = ExtResource("3_jhyi7")
@@ -20,6 +22,9 @@ size = Vector2(0.457, 0.457)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db3fa"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_taqtt"]
+albedo_texture = ExtResource("11_d63h6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jhyi7"]
 size = Vector3(1.1291504, 0.77978516, 1.123291)
@@ -51,7 +56,7 @@ transform = Transform3D(0.007705021, 0, 0.0063743745, 0, 0.01, 0, -0.0063743745,
 transform = Transform3D(0.0076458273, 0, -0.01405494, 0, 0.016, 0, 0.01405494, 0, 0.0076458273, -0.14369503, 0, 0.19442935)
 
 [node name="Knight2" parent="chessboard/PiecesWhite" unique_id=1528337454 instance=ExtResource("6_b8iba")]
-transform = Transform3D(-0.0031959068, 0, -0.01567757, 0, 0.016, 0, 0.01567757, 0, -0.0031959068, 0.08526931, 0, 0.08305688)
+transform = Transform3D(-0.0031959068, 0, -0.01567757, 0, 0.016, 0, 0.01567757, 0, -0.0031959068, -0.029848158, 0, 0.025943264)
 
 [node name="Pawn" parent="chessboard/PiecesWhite" unique_id=898284753 instance=ExtResource("7_d63h6")]
 transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -0.20651224, 0, 0.13638783)
@@ -143,7 +148,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
 transform = Transform3D(-0.006692214, 0, -0.014533213, 0, 0.016, 0, 0.014533213, 0, -0.006692214, -0.027546339, 0, -0.14523216)
 
 [node name="Pawn_0" parent="chessboard/PiecesBlack/Pawn4/Sketchfab_model/Root/Pawn" parent_id_path=PackedInt32Array(681312733, 561174157) index="0" unique_id=473895112]
-transform = Transform3D(0.99999994, 2.9802322e-08, -6.617445e-24, -2.9802322e-08, 0.99999994, 3.3087225e-24, 6.617445e-24, 3.3087225e-24, 0.99999994, 7.7792253, 3.5821562, 0)
+transform = Transform3D(0.9999999, 2.9802322e-08, -6.617445e-24, -2.9802322e-08, 0.9999999, 1.4992649e-24, 6.617445e-24, 1.4992649e-24, 0.9999999, 8.768784, 3.9276657, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
 
 [node name="Pawn5" parent="chessboard/PiecesBlack" unique_id=1225219320 instance=ExtResource("7_d63h6")]
@@ -190,6 +195,13 @@ transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0.2012113, 0, -0.
 [node name="Rook_0" parent="chessboard/PiecesBlack/Rook2/Sketchfab_model/Root/Rook" parent_id_path=PackedInt32Array(1901100558, 1207418642) index="0" unique_id=1145067785]
 surface_material_override/0 = SubResource("StandardMaterial3D_db3fa")
 
+[node name="stickynote1" parent="chessboard" unique_id=1446896345 instance=ExtResource("10_b8iba")]
+transform = Transform3D(0.9316595, 0, -0.3633325, 0, 1, 0, 0.3633325, 0, 0.9316595, 0.23212986, 0.07793024, 0.462018)
+
+[node name="Sticky note_001" parent="chessboard/stickynote1" index="0" unique_id=1253370280]
+transform = Transform3D(99.34947, -11.387949, -1.3575493e-06, 0, -1.1920929e-05, 100.00001, -11.38795, -99.349464, -1.1843378e-05, -0.00090810657, -0.104851484, -0.21190473)
+surface_material_override/0 = SubResource("StandardMaterial3D_taqtt")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=60615207]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1083952889]
@@ -212,3 +224,4 @@ shape = SubResource("BoxShape3D_jhyi7")
 [editable path="chessboard/PiecesBlack/King"]
 [editable path="chessboard/PiecesBlack/Rook"]
 [editable path="chessboard/PiecesBlack/Rook2"]
+[editable path="chessboard/stickynote1"]

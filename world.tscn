@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dphpn0rrmby6q" path="res://assets/models/room.fbx" id="1_036b0"]
 [ext_resource type="PackedScene" uid="uid://dkhsbypwy2kqk" path="res://prefabs/bookshelf1.tscn" id="2_dwbse"]
+[ext_resource type="FontFile" uid="uid://ifr4tt2v8fu2" path="res://assets/IBM_Plex_Mono/IBMPlexMono-Regular.ttf" id="3_cbp6q"]
 [ext_resource type="PackedScene" uid="uid://b6iiuro6ydkia" path="res://prefabs/bookshelf2.tscn" id="3_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://i16imkq50p68" path="res://prefabs/bookshelf3.tscn" id="4_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://bxvutgyug83ew" path="res://prefabs/bookshelf4.tscn" id="5_ioo17"]
@@ -10,10 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://bhx23jodvvj4n" path="res://table.tscn" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://bfmltyjg7ddyx" path="res://prefabs/exam.tscn" id="9_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://c0pbbhy487t7c" path="res://enviroment.tscn" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://cxbel5xqdbb41" path="res://prefabs/books/book_I.tscn" id="9_udxuc"]
 [ext_resource type="PackedScene" uid="uid://cjo0l4npolsxb" path="res://prefabs/crossword.tscn" id="10_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://b5o0jw487bv7u" path="res://chess_table.tscn" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://c6yfumfw51d6v" path="res://prefabs/notebook.tscn" id="11_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://c246w3gg5m666" path="res://prefabs/filing_cabinet.tscn" id="13_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://gqt8wqsb7qx0" path="res://prefabs/electrical_box.tscn" id="14_70uel"]
+[ext_resource type="PackedScene" uid="uid://djktv4imp864d" path="res://prefabs/books/book_III.tscn" id="15_ikiii"]
+[ext_resource type="PackedScene" uid="uid://jmxe3xpi8gvh" path="res://prefabs/books/book_IV.tscn" id="17_ikiii"]
+[ext_resource type="Texture2D" uid="uid://cpdqy624yl0xl" path="res://assets/textures/poster.jpg" id="20_26xuy"]
+[ext_resource type="PackedScene" uid="uid://dak45hexy8klk" path="res://prefabs/keypad.tscn" id="21_bc84e"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pkg7o"]
 
@@ -23,6 +30,12 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_70uel"]
 material = SubResource("StandardMaterial3D_2o6r5")
 size = Vector3(0.02, 0.02, 4.26)
+
+[sub_resource type="QuadMesh" id="QuadMesh_bc84e"]
+size = Vector2(0.297, 0.42)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wukud"]
+albedo_texture = ExtResource("20_26xuy")
 
 [node name="World" type="Node3D" unique_id=1094791036]
 metadata/_edit_lock_ = true
@@ -65,6 +78,14 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.27114493, -9.928472)
 metadata/_edit_lock_ = true
 
+[node name="Label3D" type="Label3D" parent="bookshelf" unique_id=1102979557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.090182304, 1.9286565, 1.648988)
+pixel_size = 0.003
+modulate = Color(0.87545645, 0.8754565, 0.87545645, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "shelf 1"
+font = ExtResource("3_cbp6q")
+
 [node name="bookshelf2" parent="." unique_id=1989048308 instance=ExtResource("3_pkg7o")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -8.520458, 0.27114397, -5.09844)
 metadata/_edit_lock_ = true
@@ -95,6 +116,9 @@ metadata/_edit_lock_ = true
 [node name="Table" parent="." unique_id=1729802368 instance=ExtResource("8_gbfbk")]
 transform = Transform3D(-0.662411, 0, -0.74914074, 0, 1, 0, 0.74914074, 0, -0.662411, 4.733386, 0.7991307, -1.7126101)
 
+[node name="book" parent="Table" unique_id=726544874 instance=ExtResource("9_udxuc")]
+transform = Transform3D(0.29639155, 0, 0.9550665, 0, 1, 0, -0.9550665, 0, 0.29639155, 0.57497376, 0.048229277, -1.0928863)
+
 [node name="Exam" parent="Table" unique_id=1558142632 instance=ExtResource("9_ic0uy")]
 transform = Transform3D(-0.2848855, 0, -0.9585619, 0, 1, 0, 0.9585619, 0, -0.2848855, 0.2982266, 0.04549682, 0.6978979)
 
@@ -105,15 +129,33 @@ transform = Transform3D(0.5741055, 0, -0.8187817, 0, 1, 0, 0.8187817, 0, 0.57410
 transform = Transform3D(0.58702254, 0, 0.80957067, 0, 1, 0, -0.80957067, 0, 0.58702254, -2.7147932, -0.7897144, -2.1909585)
 mesh = SubResource("BoxMesh_70uel")
 
+[node name="notebook" parent="Table" unique_id=751315433 instance=ExtResource("11_hiqwa")]
+transform = Transform3D(0.5624298, 0, -0.82684505, 0, 1, 0, 0.82684505, 0, 0.5624298, 0.5578995, 0.04167956, -0.87060755)
+
 [node name="WorldEnvironment" parent="." unique_id=1598018179 instance=ExtResource("9_ioo17")]
 
 [node name="ChessTable" parent="." unique_id=2017433026 instance=ExtResource("10_wse8f")]
 transform = Transform3D(0.6051273, 0, -0.79612875, 0, 1, 0, 0.79612875, 0, 0.6051273, -3.6885912, 0.41833997, -1.2026488)
 
+[node name="book" parent="ChessTable" unique_id=2059536914 instance=ExtResource("15_ikiii")]
+transform = Transform3D(0.6051273, 0, 0.79612875, 0, 1, 0, -0.79612875, 0, 0.6051273, 0.3047422, 0.36900073, -0.29652125)
+
 [node name="FilingCabinet" parent="." unique_id=564058686 instance=ExtResource("13_2o6r5")]
 transform = Transform3D(0.43976688, 0, -0.89811194, 0, 1, 0, 0.89811194, 0, 0.43976688, -5.0299044, 0.6603997, -7.3053436)
 
+[node name="book" parent="FilingCabinet" unique_id=2045870123 instance=ExtResource("17_ikiii")]
+transform = Transform3D(-1.0000001, -8.940697e-08, -4.4703484e-08, -3.5527137e-15, 0.4415372, -0.89724296, 8.940697e-08, -0.8972431, -0.44153723, -0.16608381, -0.5560081, -0.28621578)
+
 [node name="ElectricalBox" parent="." unique_id=1465126435 instance=ExtResource("14_70uel")]
 transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 10.061656, 1.2805166, -2.6937015)
+
+[node name="Poster" type="MeshInstance3D" parent="." unique_id=1135743728]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -9.69131, 1.3606466, 3.5056846)
+mesh = SubResource("QuadMesh_bc84e")
+surface_material_override/0 = SubResource("StandardMaterial3D_wukud")
+
+[node name="ExitKeypad" parent="." unique_id=891557776 instance=ExtResource("21_bc84e")]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -9.537409, 1.3076961, 3.775508)
+code = "42"
 
 [connection signal="power_on" from="ElectricalBox" to="Table" method="power"]

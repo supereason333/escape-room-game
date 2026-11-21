@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b66w75886nqmp"]
+
+[ext_resource type="PackedScene" uid="uid://bp1d6e6nh0nh3" path="res://assets/models/book_inside.fbx" id="1_p2aav"]
+[ext_resource type="Texture2D" uid="uid://chdct805a1khr" path="res://assets/textures/books/II Cover.jpg" id="2_04jcm"]
+[ext_resource type="Texture2D" uid="uid://bxn4gldxxdquc" path="res://assets/textures/books/II Inside.jpg" id="3_730lb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uc5s7"]
+albedo_color = Color(0.68, 0.06800002, 0.07819985, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj5xk"]
+albedo_texture = ExtResource("2_04jcm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymvc6"]
+albedo_texture = ExtResource("3_730lb")
+
+[node name="book_inside" unique_id=195299779 instance=ExtResource("1_p2aav")]
+
+[node name="BookInside" parent="." index="0" unique_id=748927948]
+transform = Transform3D(-4.3711398e-06, 100.00001, 1.1920929e-05, -100.000015, -4.371139e-06, -4.3711398e-06, -4.3711398e-06, -1.1920931e-05, 100.00002, 0, 0, 0)
+
+[node name="CoverMateria" parent="BookInside" index="0" unique_id=480502607]
+surface_material_override/0 = SubResource("StandardMaterial3D_uc5s7")
+
+[node name="CoverTexture" parent="BookInside" index="1" unique_id=1332592536]
+surface_material_override/0 = SubResource("StandardMaterial3D_xj5xk")
+
+[node name="PageTexture" parent="BookInside" index="2" unique_id=1878473733]
+surface_material_override/0 = SubResource("StandardMaterial3D_ymvc6")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d1rntqvbxeir"]
+
+[ext_resource type="PackedScene" uid="uid://8pr0r22jxql4" path="res://prefabs/books/3dui_display.tscn" id="1_61ppl"]
+[ext_resource type="PackedScene" uid="uid://cg4kwwgo6silb" path="res://prefabs/books/book_III_inside.tscn" id="2_61ppl"]
+
+[node name="3DUIDisplay" unique_id=1506862065 instance=ExtResource("1_61ppl")]
+scene_3d = ExtResource("2_61ppl")
+
+[node name="SubViewport" parent="SubViewportContainer" parent_id_path=PackedInt32Array(624471690) index="0" unique_id=600229684]
+handle_input_locally = false
+render_target_update_mode = 4
