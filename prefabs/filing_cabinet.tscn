@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://r64ujkdyabuy" path="res://prefabs/books/book_II.tscn" id="5_c1m0y"]
 [ext_resource type="PackedScene" uid="uid://cc7khudcc861o" path="res://assets/models/stickynote2.fbx" id="6_icbqt"]
 [ext_resource type="Texture2D" uid="uid://up6i1rwf7b4l" path="res://assets/textures/sticky_notes/note3.jpg" id="7_c1m0y"]
+[ext_resource type="PackedScene" uid="uid://cvy62abkpedwy" path="res://prefabs/drive.tscn" id="9_tln3y"]
+[ext_resource type="Texture2D" uid="uid://dhpbw84hnf5s2" path="res://assets/textures/sticky_notes/note6.png" id="10_gww5n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0524c"]
 
@@ -22,6 +24,9 @@ size = Vector3(0.60150146, 0.29821777, 0.390625)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tln3y"]
 albedo_texture = ExtResource("7_c1m0y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecy75"]
+albedo_texture = ExtResource("10_gww5n")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0wcpa"]
 size = Vector3(0.60253906, 1.1806641, 0.3935547)
@@ -98,9 +103,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_b3shm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18466187, -0.028137207, 0)
 shape = SubResource("BoxShape3D_0524c")
 
-[node name="filing_cabinet_draw4" parent="." index="4" unique_id=1587344961 instance=ExtResource("2_odq2c")]
+[node name="filing_cabinet_draw4" parent="." index="4" unique_id=1587344961 node_paths=PackedStringArray("items") instance=ExtResource("2_odq2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21962982, 0.5129174, 0)
 script = ExtResource("3_0524c")
+items = [NodePath("Drive")]
 locked = true
 
 [node name="Draw" parent="filing_cabinet_draw4" index="0" unique_id=500539435]
@@ -123,12 +129,22 @@ shape = SubResource("BoxShape3D_0524c")
 
 [node name="Keypad" parent="filing_cabinet_draw4" index="4" unique_id=891557776 instance=ExtResource("5_b3shm")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.12549338, -0.04311627, 0)
+code = "11341310"
 
 [node name="stickynote2" parent="filing_cabinet_draw4" index="5" unique_id=89332798 instance=ExtResource("6_icbqt")]
 transform = Transform3D(-4.371139e-08, 1, 0, -0.9039557, -3.9513157e-08, -0.42762607, -0.42762607, -1.8692129e-08, 0.9039557, 0.120167255, -0.00768137, -0.13129392)
 
 [node name="Sticky note_002" parent="filing_cabinet_draw4/stickynote2" index="0" unique_id=1748972362]
 surface_material_override/0 = SubResource("StandardMaterial3D_tln3y")
+
+[node name="Drive" parent="filing_cabinet_draw4" index="6" unique_id=2144868202 instance=ExtResource("9_tln3y")]
+transform = Transform3D(0.34315154, 0, 0.93928003, 0, 1, 0, -0.93928003, 0, 0.34315154, -0.13881688, -0.15973061, 0.11909941)
+
+[node name="stickynote3" parent="filing_cabinet_draw4" index="7" unique_id=1587353106 instance=ExtResource("6_icbqt")]
+
+[node name="Sticky note_002" parent="filing_cabinet_draw4/stickynote3" index="0" unique_id=1748972362]
+transform = Transform3D(-51.258263, -85.86379, -6.482535e-06, -85.863815, 51.258263, 3.869891e-06, 3.2840562e-13, 7.5497896e-06, -100.000015, -0.057930022, 0, 0.18598716)
+surface_material_override/0 = SubResource("StandardMaterial3D_ecy75")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="5" unique_id=1356424456]
 
@@ -147,3 +163,4 @@ shape = SubResource("BoxShape3D_0wcpa")
 [editable path="filing_cabinet_draw3"]
 [editable path="filing_cabinet_draw4"]
 [editable path="filing_cabinet_draw4/stickynote2"]
+[editable path="filing_cabinet_draw4/stickynote3"]

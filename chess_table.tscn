@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dgysocu12riec" path="res://assets/models/chess_pieces/rook/scene.gltf" id="9_723q2"]
 [ext_resource type="PackedScene" uid="uid://bkw7r0kavelji" path="res://assets/models/stickynote1.fbx" id="10_b8iba"]
 [ext_resource type="Texture2D" uid="uid://cloorhtebamfg" path="res://assets/textures/sticky_notes/note2.jpg" id="11_d63h6"]
+[ext_resource type="FontFile" uid="uid://ifr4tt2v8fu2" path="res://assets/IBM_Plex_Mono/IBMPlexMono-Regular.ttf" id="12_d63h6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfskq"]
 albedo_texture = ExtResource("3_jhyi7")
@@ -201,6 +202,39 @@ transform = Transform3D(0.9316595, 0, -0.3633325, 0, 1, 0, 0.3633325, 0, 0.93165
 [node name="Sticky note_001" parent="chessboard/stickynote1" index="0" unique_id=1253370280]
 transform = Transform3D(99.34947, -11.387949, -1.3575493e-06, 0, -1.1920929e-05, 100.00001, -11.38795, -99.349464, -1.1843378e-05, -0.00090810657, -0.104851484, -0.21190473)
 surface_material_override/0 = SubResource("StandardMaterial3D_taqtt")
+
+[node name="Label3D" type="Label3D" parent="chessboard" unique_id=479338167]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.19858196, 0.00081256026, 0.24104941)
+pixel_size = 0.0007
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "a"
+font = ExtResource("12_d63h6")
+
+[node name="Label3D2" type="Label3D" parent="chessboard" unique_id=462913026]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.19692774, 0.00081256026, 0.24104941)
+pixel_size = 0.0007
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "h
+"
+font = ExtResource("12_d63h6")
+
+[node name="Label3D3" type="Label3D" parent="chessboard" unique_id=1401171368]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.24044372, 0.00081256026, 0.20041437)
+pixel_size = 0.0007
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "1"
+font = ExtResource("12_d63h6")
+
+[node name="Label3D4" type="Label3D" parent="chessboard" unique_id=1532633763]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.24044374, 0.0008125428, -0.1992402)
+pixel_size = 0.0007
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "8"
+font = ExtResource("12_d63h6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=60615207]
 

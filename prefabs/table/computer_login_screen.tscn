@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bhkl523px3foi"]
 
-[ext_resource type="Texture2D" uid="uid://d3em8vi8pl6u2" path="res://assets/textures/exam.png" id="1_516wf"]
 [ext_resource type="Texture2D" uid="uid://ke70xxa0gyb7" path="res://assets/icon.svg" id="1_ldytl"]
 [ext_resource type="Script" uid="uid://1t80vf6afd6p" path="res://scripts/things/computer/computer_login_screen.gd" id="1_ojg6n"]
 [ext_resource type="PackedScene" uid="uid://0cuawhaun3uw" path="res://prefabs/table/computer_main.tscn" id="2_n4csj"]
+[ext_resource type="Texture2D" uid="uid://col8xu2t8fr1w" path="res://assets/background.jpeg" id="3_n4csj"]
 
 [node name="ComputerLoginScreen" type="Control" unique_id=1466380100]
 layout_mode = 3
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_516wf")
+texture = ExtResource("3_n4csj")
 expand_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1092178862]

@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://0cuawhaun3uw"]
 
 [ext_resource type="Texture2D" uid="uid://col8xu2t8fr1w" path="res://assets/background.jpeg" id="1_5y0im"]
+[ext_resource type="Script" uid="uid://dmmp8qliaoplc" path="res://scripts/things/computer/computer_main.gd" id="1_7t44b"]
 [ext_resource type="Texture2D" uid="uid://ke70xxa0gyb7" path="res://assets/icon.svg" id="2_q63fs"]
 [ext_resource type="FontFile" uid="uid://bd732aclmmbwc" path="res://assets/GoogleSansCode-VariableFont_MONO,wght.ttf" id="3_taiox"]
+[ext_resource type="Texture2D" uid="uid://ddb6jjqsqg7g0" path="res://assets/textures/folder.png" id="5_aawpu"]
+[ext_resource type="Script" uid="uid://cm4ox50hwjuqg" path="res://scripts/things/computer/file_browser.gd" id="6_garup"]
+[ext_resource type="Script" uid="uid://dq2wmm58ue1va" path="res://scripts/things/computer/file_viewer.gd" id="7_1dm0p"]
+[ext_resource type="Texture2D" uid="uid://dv11v5278htu0" path="res://assets/secret.png" id="8_i3kxr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taiox"]
 bg_color = Color(0.34968925, 0.34968933, 0.34968916, 1)
@@ -20,6 +25,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 480.0
+script = ExtResource("1_7t44b")
 
 [node name="Background" type="TextureRect" parent="." unique_id=503617214]
 z_index = -2
@@ -60,33 +66,156 @@ theme_override_fonts/font = ExtResource("3_taiox")
 text = "00:00"
 label_settings = SubResource("LabelSettings_q63fs")
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1399622746]
+[node name="GridContainer" type="Control" parent="VBoxContainer" unique_id=161762231]
 layout_mode = 2
 size_flags_vertical = 3
-columns = 6
 
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer" unique_id=1679367726]
-layout_mode = 2
-text = "aaa"
+[node name="DriveButton" type="TextureButton" parent="." unique_id=1606175133]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 40.0
+offset_right = 115.0
+offset_bottom = 140.0
+texture_normal = ExtResource("5_aawpu")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/Button" unique_id=1176027912]
+[node name="Label" type="Label" parent="DriveButton" unique_id=675097882]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 70.0
+offset_right = 100.0
+offset_bottom = 93.0
+text = "File browser"
+
+[node name="FileBrowser" type="Window" parent="." unique_id=1241399306]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "File browser"
+initial_position = 1
+size = Vector2i(472, 400)
+visible = false
+unresizable = true
+script = ExtResource("6_garup")
+target_dir = &"02469391"
+
+[node name="Control" type="Control" parent="FileBrowser" unique_id=1891924184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FileBrowser/Control" unique_id=503259323]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_q63fs")
-expand_mode = 2
-stretch_mode = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=971185443]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_taiox")
-
-[node name="Bottombar" type="HBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=1757101122]
+[node name="HBoxContainer" type="HBoxContainer" parent="FileBrowser/Control/VBoxContainer" unique_id=1257366234]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/Bottombar" unique_id=1261058169]
+[node name="RootButton" type="Button" parent="FileBrowser/Control/VBoxContainer/HBoxContainer" unique_id=339224735]
 layout_mode = 2
-text = "buttonawda"
+text = "/"
+
+[node name="UpOneButton" type="Button" parent="FileBrowser/Control/VBoxContainer/HBoxContainer" unique_id=342116497]
+layout_mode = 2
+text = "../"
+
+[node name="PathLabel" type="Label" parent="FileBrowser/Control/VBoxContainer/HBoxContainer" unique_id=888995250]
+unique_name_in_owner = true
+layout_mode = 2
+text = "/"
+
+[node name="Files" type="GridContainer" parent="FileBrowser/Control/VBoxContainer" unique_id=624055532]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 7
+
+[node name="Button" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=261162753]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button2" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=1887386377]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button3" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=2108807501]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button4" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=1933644283]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button5" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=1581773042]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button6" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=379441605]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button7" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=692348803]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button8" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=1847885754]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button9" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=1425758636]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button10" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=512690600]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Button11" type="Button" parent="FileBrowser/Control/VBoxContainer/Files" unique_id=193433972]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "/1"
+
+[node name="Label" type="Label" parent="FileBrowser/Control/VBoxContainer" unique_id=825704037]
+layout_mode = 2
+text = "the window is above the shader :("
+
+[node name="FileViewer" type="Window" parent="." unique_id=1746313797]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "File Viewer"
+initial_position = 1
+size = Vector2i(360, 240)
+visible = false
+unresizable = true
+script = ExtResource("7_1dm0p")
+
+[node name="TextureRect" type="TextureRect" parent="FileViewer" unique_id=1795463455]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_i3kxr")
+
+[connection signal="pressed" from="DriveButton" to="FileBrowser" method="show_window"]
+[connection signal="close_requested" from="FileBrowser" to="FileBrowser" method="close_window"]
+[connection signal="pressed" from="FileBrowser/Control/VBoxContainer/HBoxContainer/RootButton" to="FileBrowser" method="reset_files"]
+[connection signal="pressed" from="FileBrowser/Control/VBoxContainer/HBoxContainer/UpOneButton" to="FileBrowser" method="up_one"]
+[connection signal="close_requested" from="FileViewer" to="FileViewer" method="close_window"]

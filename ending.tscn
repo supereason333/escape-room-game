@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cwg6mfrvh2te2"]
+
+[ext_resource type="PackedScene" uid="uid://csgng5k6k6gh" path="res://player.tscn" id="1_iggq8"]
+[ext_resource type="PackedScene" uid="uid://c0pbbhy487t7c" path="res://enviroment.tscn" id="2_4jooh"]
+[ext_resource type="Material" uid="uid://8kucvl7c63g4" path="res://resources/white_materia.tres" id="3_k7rdy"]
+[ext_resource type="PackedScene" uid="uid://dkhsbypwy2kqk" path="res://prefabs/bookshelf1.tscn" id="4_4jooh"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sy8ce"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uvbhr"]
+size = Vector3(-10, -10, -10)
+
+[node name="Ending" type="Node3D" unique_id=1517602986]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=19881409]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=758380362]
+shape = SubResource("WorldBoundaryShape3D_sy8ce")
+
+[node name="WorldEnvironment" parent="." unique_id=1598018179 instance=ExtResource("2_4jooh")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=155264977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+mesh = SubResource("BoxMesh_uvbhr")
+surface_material_override/0 = ExtResource("3_k7rdy")
+
+[node name="bookshelf" parent="." unique_id=836207381 instance=ExtResource("4_4jooh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7454033, 0.24724674, 0)
+
+[node name="Player" parent="." unique_id=1240751223 instance=ExtResource("1_iggq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+walk_speed = 3.0
+sprint_speed = 5.0
+response = 20.0
+max_force = 1000.0
+
+[node name="Label3D" type="Label3D" parent="." unique_id=700292778]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.3646536, 1.4284797, 8.2272514e-08)
+text = "You did it!!!"

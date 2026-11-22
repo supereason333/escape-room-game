@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cvy62abkpedwy"]
+
+[ext_resource type="PackedScene" uid="uid://d1nmuax1ycbhp" path="res://assets/models/drive.fbx" id="1_ymxdb"]
+[ext_resource type="Script" uid="uid://dl8qcq6dvjh8b" path="res://scripts/things/usb_drive.gd" id="2_4uudu"]
+[ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="3_hixxm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y75be"]
+size = Vector3(0.0625, 0.016601563, 0.08203125)
+
+[node name="Drive" unique_id=2144868202 instance=ExtResource("1_ymxdb")]
+script = ExtResource("2_4uudu")
+
+[node name="Select3D" parent="." index="1" unique_id=1980313047 instance=ExtResource("3_hixxm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Select3D" index="0" unique_id=511563463]
+shape = SubResource("BoxShape3D_y75be")
+
+[connection signal="triggered" from="Select3D" to="." method="_on_select_3d_triggered"]

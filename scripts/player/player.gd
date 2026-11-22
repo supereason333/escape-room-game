@@ -4,6 +4,8 @@ class_name Player
 signal override
 signal override_released
 
+@onready var white_overlay:ColorRect = %WhiteOverlay
+
 @onready var override_ui_base:Control = %OverrideUI
 @onready var select_ray:RayCast3D = %SelectRay
 @onready var cam_rotate:Node3D = $Rotate
@@ -33,9 +35,19 @@ var camera_override := false:
 			else:
 				override_released.emit()
 
+var has_drive := false:
+	set(value):
+		has_drive = value
+		%DriveTexture.visible = has_drive
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	normal_height = cam_rotate.position.y
+	camera_override = true
+	await get_tree().create_timer(1).timeout
+	await create_tween().tween_property(white_overlay, "color:a", 0, 0.3).finished
+	white_overlay.queue_free()
+	camera_override = false
 
 func _physics_process(_dt: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "forward", "back")

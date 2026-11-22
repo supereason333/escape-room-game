@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bmai4xubrr685" path="res://scripts/keypad.gd" id="1_fwkr6"]
 [ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="1_sr7sl"]
+[ext_resource type="Texture2D" uid="uid://dsb73clxubvk7" path="res://assets/textures/keypad.png" id="1_t3jc1"]
 [ext_resource type="Script" uid="uid://inccqs4cu3k5" path="res://scripts/things/ui_override.gd" id="2_al8v3"]
 [ext_resource type="PackedScene" uid="uid://besq4jiojmnyn" path="res://prefabs/keypad_ui_display.tscn" id="3_ypv40"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_al8v3"]
 size = Vector2(0.14, 0.17)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjkfh"]
+albedo_texture = ExtResource("1_t3jc1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ypv40"]
 size = Vector3(0.13378906, 0.17285156, 0.015625)
@@ -14,6 +18,7 @@ size = Vector3(0.13378906, 0.17285156, 0.015625)
 [node name="Keypad" type="MeshInstance3D" unique_id=891557776]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_al8v3")
+surface_material_override/0 = SubResource("StandardMaterial3D_tjkfh")
 script = ExtResource("1_fwkr6")
 
 [node name="Select3D" parent="." unique_id=1980313047 instance=ExtResource("1_sr7sl")]

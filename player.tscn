@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://buaargxvteaxn" path="res://scripts/player/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://ctmlabh2nqyeo" path="res://scripts/player/select_ray.gd" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://b77vrltkyx61b" path="res://assets/drive.png" id="3_i3pqv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4flbx"]
 friction = 0.5
@@ -63,6 +64,15 @@ color = Color(0.25490198, 1, 0.25882354, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2073290239]
 
+[node name="WhiteOverlay" type="ColorRect" parent="CanvasLayer" unique_id=1304644976]
+unique_name_in_owner = true
+z_index = 6
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="UI" type="Control" parent="CanvasLayer" unique_id=1888029374]
 unique_name_in_owner = true
 layout_mode = 3
@@ -87,6 +97,15 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_onrkg")
+
+[node name="DriveTexture" type="TextureRect" parent="CanvasLayer/UI" unique_id=775939006]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("3_i3pqv")
 
 [node name="OverrideUI" type="Control" parent="CanvasLayer" unique_id=1231756080]
 unique_name_in_owner = true
