@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsb73clxubvk7"
 path.s3tc="res://.godot/imported/keypad.png-749fdc74814d716d915c4792d4af89c2.s3tc.ctex"
+path.etc2="res://.godot/imported/keypad.png-749fdc74814d716d915c4792d4af89c2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/keypad.png"
-dest_files=["res://.godot/imported/keypad.png-749fdc74814d716d915c4792d4af89c2.s3tc.ctex"]
+dest_files=["res://.godot/imported/keypad.png-749fdc74814d716d915c4792d4af89c2.s3tc.ctex", "res://.godot/imported/keypad.png-749fdc74814d716d915c4792d4af89c2.etc2.ctex"]
 
 [params]
 

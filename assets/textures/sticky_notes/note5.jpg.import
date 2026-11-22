@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vvcnhbd38x5e"
 path.s3tc="res://.godot/imported/note5.jpg-67077306033e94ded7e90b032efed74d.s3tc.ctex"
+path.etc2="res://.godot/imported/note5.jpg-67077306033e94ded7e90b032efed74d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/sticky_notes/note5.jpg"
-dest_files=["res://.godot/imported/note5.jpg-67077306033e94ded7e90b032efed74d.s3tc.ctex"]
+dest_files=["res://.godot/imported/note5.jpg-67077306033e94ded7e90b032efed74d.s3tc.ctex", "res://.godot/imported/note5.jpg-67077306033e94ded7e90b032efed74d.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://wr15jwsi00ww"
 path.s3tc="res://.godot/imported/note4.jpg-87d6e5a7925396ccc9dabe8d7be8c50b.s3tc.ctex"
+path.etc2="res://.godot/imported/note4.jpg-87d6e5a7925396ccc9dabe8d7be8c50b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/sticky_notes/note4.jpg"
-dest_files=["res://.godot/imported/note4.jpg-87d6e5a7925396ccc9dabe8d7be8c50b.s3tc.ctex"]
+dest_files=["res://.godot/imported/note4.jpg-87d6e5a7925396ccc9dabe8d7be8c50b.s3tc.ctex", "res://.godot/imported/note4.jpg-87d6e5a7925396ccc9dabe8d7be8c50b.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpkoem03p1eav"
 path.s3tc="res://.godot/imported/library_of_babel.jpg-8fac191496d3a987314bb72f804e69b5.s3tc.ctex"
+path.etc2="res://.godot/imported/library_of_babel.jpg-8fac191496d3a987314bb72f804e69b5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/books/library_of_babel.jpg"
-dest_files=["res://.godot/imported/library_of_babel.jpg-8fac191496d3a987314bb72f804e69b5.s3tc.ctex"]
+dest_files=["res://.godot/imported/library_of_babel.jpg-8fac191496d3a987314bb72f804e69b5.s3tc.ctex", "res://.godot/imported/library_of_babel.jpg-8fac191496d3a987314bb72f804e69b5.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://5eo0w26fq2ev"
 path.s3tc="res://.godot/imported/crossword_base.png-83c40354474172175b83b27a7259e0c2.s3tc.ctex"
+path.etc2="res://.godot/imported/crossword_base.png-83c40354474172175b83b27a7259e0c2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/crossword_base.png"
-dest_files=["res://.godot/imported/crossword_base.png-83c40354474172175b83b27a7259e0c2.s3tc.ctex"]
+dest_files=["res://.godot/imported/crossword_base.png-83c40354474172175b83b27a7259e0c2.s3tc.ctex", "res://.godot/imported/crossword_base.png-83c40354474172175b83b27a7259e0c2.etc2.ctex"]
 
 [params]
 

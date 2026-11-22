@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://chdct805a1khr"
 path.s3tc="res://.godot/imported/II Cover.jpg-ad7e5f175fb94ab1c54bcea8c7a7c18a.s3tc.ctex"
+path.etc2="res://.godot/imported/II Cover.jpg-ad7e5f175fb94ab1c54bcea8c7a7c18a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/books/II Cover.jpg"
-dest_files=["res://.godot/imported/II Cover.jpg-ad7e5f175fb94ab1c54bcea8c7a7c18a.s3tc.ctex"]
+dest_files=["res://.godot/imported/II Cover.jpg-ad7e5f175fb94ab1c54bcea8c7a7c18a.s3tc.ctex", "res://.godot/imported/II Cover.jpg-ad7e5f175fb94ab1c54bcea8c7a7c18a.etc2.ctex"]
 
 [params]
 
