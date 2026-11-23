@@ -52,7 +52,20 @@ mesh = SubResource("BoxMesh_uvbhr")
 surface_material_override/0 = ExtResource("3_k7rdy")
 
 [node name="bookshelf" parent="." unique_id=836207381 instance=ExtResource("4_4jooh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7454033, 0.24724674, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.0012297034, 0.24724674, -4.8078127)
+
+[node name="Label3D" type="Label3D" parent="bookshelf" unique_id=700292778]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.3807497, 1.1812329, 8.2272514e-08)
+text = "You did it!!!"
+
+[node name="Label3D2" type="Label3D" parent="bookshelf" unique_id=873305486]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.3807497, 0.443617, 8.2272514e-08)
+text = "Thank you for playing"
+
+[node name="TimeLabel" type="Label3D" parent="bookshelf" unique_id=1553616092]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.3807497, 0.82295656, 8.2272514e-08)
+text = "You did it!!!"
+script = ExtResource("5_k7rdy")
 
 [node name="Player" parent="." unique_id=1240751223 instance=ExtResource("1_iggq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -61,21 +74,8 @@ sprint_speed = 5.0
 response = 20.0
 max_force = 1000.0
 
-[node name="Label3D" type="Label3D" parent="." unique_id=700292778]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.3646536, 1.4284797, 8.2272514e-08)
-text = "You did it!!!"
-
-[node name="Label3D2" type="Label3D" parent="." unique_id=873305486]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.3646536, 0.6908637, 8.2272514e-08)
-text = "Thank you for playing"
-
-[node name="TimeLabel" type="Label3D" parent="." unique_id=1553616092]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.3646536, 1.0702033, 8.2272514e-08)
-text = "You did it!!!"
-script = ExtResource("5_k7rdy")
-
 [node name="Ball" type="RigidBody3D" parent="." unique_id=767971205]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7381293, 0.6359645, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8504734, 0.635965, -2.4206083)
 script = ExtResource("6_m7rhh")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Ball" unique_id=1866341785]
@@ -100,4 +100,31 @@ text = "View the secrets
 of the universe"
 font = ExtResource("7_uvbhr")
 
+[node name="Ball2" type="RigidBody3D" parent="." unique_id=1199069829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8504734, 2.6359649, -2.4206083)
+script = ExtResource("6_m7rhh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Ball2" unique_id=1409708870]
+mesh = SubResource("SphereMesh_uvbhr")
+surface_material_override/0 = SubResource("StandardMaterial3D_m7rhh")
+
+[node name="Select3D" parent="Ball2" unique_id=1189905326 instance=ExtResource("6_sy8ce")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball2/Select3D" unique_id=123074064]
+shape = SubResource("SphereShape3D_e2dv3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball2" unique_id=831752256]
+shape = SubResource("SphereShape3D_e2dv3")
+
+[node name="Label3D" type="Label3D" parent="Ball2" unique_id=2089442810]
+pixel_size = 0.003
+billboard = 1
+no_depth_test = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "View the secrets
+of the universe"
+font = ExtResource("7_uvbhr")
+
 [connection signal="triggered" from="Ball/Select3D" to="Ball" method="_on_select_3d_triggered"]
+[connection signal="triggered" from="Ball2/Select3D" to="Ball2" method="_on_select_3d_triggered"]
