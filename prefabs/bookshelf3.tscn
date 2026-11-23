@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://bm1h17sp684ip" path="res://resources/book_dar_material.tres" id="2_6q7cl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6q7cl"]
-albedo_color = Color(0.972549, 0.9764706, 0.21176471, 1)
+albedo_color = Color(0.862784, 0.8588462, 0.08979472, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_10vhi"]
 size = Vector3(0.60302734, 2.3867798, 3.2822266)

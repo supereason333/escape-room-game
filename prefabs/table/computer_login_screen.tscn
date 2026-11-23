@@ -34,22 +34,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1087996822]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1641028525]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1944024669]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1489428109]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1087996822]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1944024669]
 layout_mode = 2
 text = "Login"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=2116631692]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2116631692]
 layout_mode = 2
 texture = ExtResource("1_ldytl")
 stretch_mode = 3
 
-[node name="LineEdit" type="LineEdit" parent="CenterContainer/VBoxContainer" unique_id=332845558]
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=332845558]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 placeholder_text = "password"
 
-[connection signal="text_submitted" from="CenterContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1028908777]
+layout_mode = 2
+
+[node name="WrongLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1614193906]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 0)
+layout_mode = 2
+text = "Incorect!"
+
+[node name="Timer" type="Timer" parent="." unique_id=876425766]
+one_shot = true
+
+[connection signal="text_submitted" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

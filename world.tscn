@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://jmxe3xpi8gvh" path="res://prefabs/books/book_IV.tscn" id="17_ikiii"]
 [ext_resource type="Texture2D" uid="uid://cpdqy624yl0xl" path="res://assets/textures/poster.jpg" id="20_26xuy"]
 [ext_resource type="Material" uid="uid://8kucvl7c63g4" path="res://resources/white_materia.tres" id="21_wjb0r"]
+[ext_resource type="Texture2D" uid="uid://dsb73clxubvk7" path="res://assets/textures/keypad.png" id="24_4h6ng"]
 [ext_resource type="PackedScene" uid="uid://c0d086lhn1drq" path="res://select_3d.tscn" id="24_bo7i5"]
 [ext_resource type="Script" uid="uid://inccqs4cu3k5" path="res://scripts/things/ui_override.gd" id="25_4h6ng"]
 [ext_resource type="PackedScene" uid="uid://bfgqbcek3i7gi" path="res://exit_keypad.tscn" id="26_bo7i5"]
@@ -64,6 +65,9 @@ albedo_texture = ExtResource("20_26xuy")
 [sub_resource type="PlaneMesh" id="PlaneMesh_k83mh"]
 size = Vector2(0.21, 0.1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3ebs"]
+albedo_texture = ExtResource("24_4h6ng")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_qktwf"]
 size = Vector3(0.20703125, 0.008056641, 0.1005249)
 
@@ -100,6 +104,9 @@ shape = SubResource("WorldBoundaryShape3D_pkg7o")
 transform = Transform3D(0.5000002, 0.8660253, 3.785517e-08, 0, -4.371139e-08, 1, 0.8660253, -0.5000002, -2.1855703e-08, -8.780206, 0, 5.069256)
 shape = SubResource("WorldBoundaryShape3D_pkg7o")
 
+[node name="Node3D" type="Node3D" parent="." unique_id=2037303417]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
 [node name="room" parent="." unique_id=2112994885 instance=ExtResource("1_036b0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 metadata/_edit_lock_ = true
@@ -117,7 +124,7 @@ text = "shelf 1"
 font = ExtResource("3_cbp6q")
 
 [node name="bookshelf2" parent="." unique_id=1989048308 instance=ExtResource("3_pkg7o")]
-transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -8.520458, 0.27114397, -5.09844)
+transform = Transform3D(-0.86602545, 0, 0.4999999, 0, 1, 0, -0.4999999, 0, -0.86602545, 8.520458, 0.27114397, 5.098439)
 metadata/_edit_lock_ = true
 
 [node name="bookshelf3" parent="." unique_id=516809657 instance=ExtResource("4_gbfbk")]
@@ -125,7 +132,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 metadata/_edit_lock_ = true
 
 [node name="bookshelf4" parent="." unique_id=833030151 instance=ExtResource("5_ioo17")]
-transform = Transform3D(-0.8660254, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660254, 8.535787, 0.2850976, 5.0765724)
+transform = Transform3D(0.86602545, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, 0.86602545, -8.535787, 0.24204749, -5.0765715)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=1240751223 instance=ExtResource("6_dwbse")]
@@ -146,11 +153,11 @@ metadata/_edit_lock_ = true
 [node name="Table" parent="." unique_id=1729802368 instance=ExtResource("8_gbfbk")]
 transform = Transform3D(-0.662411, 0, -0.74914074, 0, 1, 0, 0.74914074, 0, -0.662411, 4.733386, 0.7991307, -1.7126101)
 
-[node name="book" parent="Table" unique_id=726544874 instance=ExtResource("9_udxuc")]
+[node name="book" parent="Table" unique_id=149612427 instance=ExtResource("9_udxuc")]
 transform = Transform3D(0.29639155, 0, 0.9550665, 0, 1, 0, -0.9550665, 0, 0.29639155, 0.57497376, 0.048229277, -1.0928863)
 
 [node name="Exam" parent="Table" unique_id=1558142632 instance=ExtResource("9_ic0uy")]
-transform = Transform3D(-0.2848855, 0, -0.9585619, 0, 1, 0, 0.9585619, 0, -0.2848855, 0.2982266, 0.04549682, 0.6978979)
+transform = Transform3D(-0.2848855, 0, -0.9585619, 0, 1, 0, 0.9585619, 0, -0.2848855, 0.2982266, 0.041681647, 0.6978979)
 
 [node name="Crossword" parent="Table" unique_id=890191936 instance=ExtResource("10_k3n1d")]
 transform = Transform3D(0.5741055, 0, -0.8187817, 0, 1, 0, 0.8187817, 0, 0.5741055, 0.45815945, 0.03993708, 0.9695699)
@@ -168,7 +175,7 @@ mesh = SubResource("QuadMesh_il2jm")
 surface_material_override/0 = SubResource("StandardMaterial3D_wjb0r")
 
 [node name="BableBook" type="MeshInstance3D" parent="Table" unique_id=231565508]
-transform = Transform3D(0.6218998, 0.78309685, 0, 3.423025e-08, -2.7184102e-08, 1, 0.78309685, -0.6218998, -4.371139e-08, 0.18342811, 0.03593099, 0.55396545)
+transform = Transform3D(0.6218998, 0.78309685, 0, 3.423025e-08, -2.7184102e-08, 1, 0.78309685, -0.6218998, -4.371139e-08, 0.21775426, 0.03593093, 0.5325519)
 mesh = SubResource("QuadMesh_wjb0r")
 surface_material_override/0 = SubResource("StandardMaterial3D_mc2jv")
 
@@ -208,6 +215,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wukud")
 [node name="ExitKeypad" type="MeshInstance3D" parent="." unique_id=2140365606]
 transform = Transform3D(-0.50000006, 0.8660254, -2.9802322e-08, 0, -4.371139e-08, -1, -0.86602545, -0.50000006, -2.9802322e-08, -9.537409, 1.3076961, 3.775508)
 mesh = SubResource("PlaneMesh_k83mh")
+surface_material_override/0 = SubResource("StandardMaterial3D_o3ebs")
 
 [node name="Select3D" parent="ExitKeypad" unique_id=1980313047 instance=ExtResource("24_bo7i5")]
 
@@ -220,11 +228,15 @@ script = ExtResource("25_4h6ng")
 ui_scene = ExtResource("26_bo7i5")
 
 [node name="Label3D" type="Label3D" parent="ExitKeypad" unique_id=1380328525]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.637979e-12, 0.0034697978, -1.5166968e-10)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.637979e-12, 0.0034697931, -0.10779047)
 pixel_size = 0.002
+modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(0, 0, 0, 0)
 text = "exit"
 font = ExtResource("3_cbp6q")
 
+[connection signal="tree_entered" from="Player/CanvasLayer/UI/TimerLabel" to="Player/CanvasLayer/UI/TimerLabel" method="start_timer"]
 [connection signal="power_on" from="ElectricalBox" to="Table" method="power"]
 [connection signal="triggered" from="ExitKeypad/Select3D" to="ExitKeypad/UiOverride" method="override"]
+
+[editable path="Player"]

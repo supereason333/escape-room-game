@@ -69,6 +69,14 @@ virtual_keyboard_show_on_focus = false
 scroll_fit_content_height = true
 scroll_fit_content_width = true
 
+[node name="MouseBlocker" type="Control" parent="VBoxContainer/Control/TextEdit" unique_id=635253517]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer" unique_id=1300246778]
 unique_name_in_owner = true
 layout_mode = 2
@@ -84,14 +92,6 @@ selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 script = ExtResource("3_ejlf3")
-
-[node name="MouseBlocker" type="Control" parent="." unique_id=635253517]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="text_submitted" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="text_submitted" from="VBoxContainer/LineEdit" to="VBoxContainer/LineEdit" method="_on_text_submitted"]

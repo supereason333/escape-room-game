@@ -2,6 +2,7 @@ extends Node3D
 
 @export var items:Array[Node3D]
 @export var locked := false
+@export var default_open := false
 
 var open_depth := 0.5
 var initial_x := 0.0
@@ -13,6 +14,10 @@ func _ready() -> void:
 
 	for item in items:
 		item.position.y -= 1000
+
+	if default_open:
+		interract(null)
+
 
 func interract(_pl:Player):
 	if locked: return

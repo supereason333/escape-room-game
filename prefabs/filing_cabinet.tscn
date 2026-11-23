@@ -84,6 +84,7 @@ transform = Transform3D(0.44621345, 0, -0.89492655, 0, 1, 0, 0.89492655, 0, 0.44
 [node name="filing_cabinet_draw3" parent="." index="3" unique_id=2143439059 instance=ExtResource("2_odq2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21962982, 0.21688482, 0)
 script = ExtResource("3_0524c")
+default_open = true
 
 [node name="Draw" parent="filing_cabinet_draw3" index="0" unique_id=500539435]
 surface_material_override/0 = SubResource("StandardMaterial3D_0524c")

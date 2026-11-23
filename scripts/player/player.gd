@@ -12,6 +12,8 @@ signal override_released
 @onready var cam_tilt:Node3D = $Rotate/Tilt
 @onready var camera:Camera3D = %Camera
 var camera_zoomed := false
+var zoom_min := 40.0
+var zoom_max := 5.0
 
 @export var sens := 0.001
 @export var walk_speed := 10.0
@@ -89,6 +91,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_released("zoom") and camera_zoomed:
 		camera_zoomed = false
 		create_tween().tween_property(camera, "fov", 75, 0.1)
+
+	if event is InputEventMouseButton and camera_zoomed:
+		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			camera.fov = clampf(camera.fov + 2, zoom_max, zoom_min)
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			camera.fov = clampf(camera.fov - 2, zoom_max, zoom_min)
 
 	if event.is_action_pressed("crouch") and !crouching:
 		crouching = true

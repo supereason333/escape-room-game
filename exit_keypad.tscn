@@ -18,7 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uvjrs")
-key = "fourty two"
+key = "fourty_two_"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2090793747]
 layout_mode = 1

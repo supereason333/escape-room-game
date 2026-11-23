@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb48xxntyjfpa"]
 
-[ext_resource type="Texture2D" uid="uid://bd0x78k7ldta2" path="res://assets/textures/notebook_inside.jpg" id="1_ck2ux"]
+[ext_resource type="Texture2D" uid="uid://wafvdnnfeani" path="res://assets/textures/notebook_inside.png" id="1_ck2ux"]
 
 [node name="NotebookDisplay" type="Control" unique_id=1055541052]
 layout_mode = 3
