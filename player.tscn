@@ -60,6 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61955416, 0)
 
 [node name="Camera" type="Camera3D" parent="Rotate/Tilt" unique_id=304607599]
 unique_name_in_owner = true
+visible = false
 
 [node name="SelectRay" type="RayCast3D" parent="Rotate/Tilt" unique_id=1251221220]
 unique_name_in_owner = true

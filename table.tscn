@@ -109,6 +109,7 @@ camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="CameraOverride" unique_id=287008140]
 transform = Transform3D(-4.3376488e-08, -0.12354951, 0.9923384, -5.400521e-09, 0.9923384, 0.12354951, -1, -4.440892e-16, -4.371139e-08, 0.5893133, 0.6192412, 0)
+visible = false
 
 [node name="ScreenSize" type="Control" parent="." unique_id=98554531]
 layout_mode = 3
