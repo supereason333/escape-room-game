@@ -50,6 +50,7 @@ func _ready() -> void:
 	await create_tween().tween_property(white_overlay, "color:a", 0, 0.3).finished
 	white_overlay.queue_free()
 	camera_override = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(_dt: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
