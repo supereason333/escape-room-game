@@ -16,12 +16,12 @@ I made this with the Godot game engine, I wanted to make an escape room original
 
 ## Controls
 
-WASD => move
-Click => interact
-C or L-CTRL => crouch
-Z => zoom
-ESC => ungrab mouse
-SPACE => exit view
+- WASD => move
+- Click => interact
+- C or L-CTRL => crouch
+- Z => zoom (scroll to change zoom)
+- ESC => ungrab mouse / capture mouse
+- SPACE => exit view
 
 ## Screenshots
 
